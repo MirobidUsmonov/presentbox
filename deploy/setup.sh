@@ -32,6 +32,7 @@ sudo apt install -y nginx
 
 # 6. Adjust Firewall (UFW)
 echo "🛡 Configuring Firewall..."
+sudo apt install -y ufw
 sudo ufw allow OpenSSH
 sudo ufw allow 'Nginx Full'
 sudo ufw --force enable

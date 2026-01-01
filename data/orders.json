@@ -17,24 +17,5 @@
     "id": 2,
     "status": "delivered",
     "createdAt": "2025-12-30T15:24:41.459Z"
-  },
-  {
-    "productId": 11,
-    "productTitle": "Balaklava - Taktik niqob (Xaki)",
-    "productImage": "https://images.uzum.uz/d3g60a0op562uss35u90/original.jpg",
-    "price": "44 100 so'm",
-    "quantity": 1,
-    "totalPrice": 44100,
-    "customer": {
-      "firstName": "zcxz",
-      "lastName": "zxcz",
-      "phone": "+9zcxczxczx",
-      "telegram": "zxczxc",
-      "region": "Qashqadaryo viloyati",
-      "district": "zxczxc"
-    },
-    "id": 3,
-    "status": "delivered",
-    "createdAt": "2025-12-30T15:47:03.066Z"
   }
 ]

@@ -81,9 +81,9 @@
       ]
     },
     "stockQuantity": 52,
-    "yandexUrl": "https://uzum.uz/ru/product/snezhnyj-suvenir-na-2025331?skuId=7185689",
     "skuId": 7185689,
-    "uzumId": 2025331
+    "uzumId": 2025331,
+    "costPrice": "20 000 so'm"
   },
   {
     "id": 4,
@@ -124,7 +124,8 @@
         "Современный дизайн"
       ]
     },
-    "stockQuantity": 8
+    "stockQuantity": 8,
+    "costPrice": "20 000 so'm"
   },
   {
     "id": 5,
@@ -165,7 +166,8 @@
         "Отличный вариант для подарка"
       ]
     },
-    "stockQuantity": 15
+    "stockQuantity": 15,
+    "costPrice": "20 000 so'm"
   },
   {
     "id": 6,
@@ -287,7 +289,7 @@
         "Высокая детализация: Четкая печать и яркие цвета"
       ]
     },
-    "stockQuantity": 39,
+    "stockQuantity": 38,
     "skuId": 7185910,
     "uzumId": 2025367
   },
@@ -481,53 +483,8 @@
     "variants": [],
     "stockQuantity": 12,
     "skuId": 7811462,
-    "uzumId": 2178833
-  },
-  {
-    "price": "45 000 so'm",
-    "category": "Hazil",
-    "image": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-    "uzumUrl": "",
-    "inStock": true,
-    "uz": {
-      "title": "Spider Box - Hazil quti (O'rgimchak)",
-      "description": "O'RGIMCHAK BILAN QUTI - HAZILLAR UCHUN IDEAL!\n😱 Kutilmagan syurpriz! Kimdir qutini ochsa, u yerdan o'rgimchak sakrab chiqadi va hissiyotlar bo'ronini keltirib chiqaradi.\n🎁 Do'stlar va oila uchun ajoyib sovg'a! Yaqinlaringizni xursand qilish va ularning qiziqarli reaktsiyasini ko'rish uchun ideal tanlov.\n🔨 Sifatli materiallar! Quti tabiiy yog'ochdan tayyorlangan, mustahkam va bardoshli.\n😂 Quvonch va kulgi! Har qanday partiyani, tug'ilgan kunni yoki oddiy kunni rang-barang qilishning ajoyib usuli.\n🕷 Haqiqiy o'rgimchak! Qora o'rgimchak shunchalik haqiqiy ko'rinadiki, u bir qarashda qo'rqitadi.\n✔ Mexanik ishlash printsipi! Batareyalar talab qilinmaydi - shunchaki qopqoqni oching.\n💡 Hamma uchun mos! Kattalar uchun ham, bolalar uchun ham qiziqarli o'yinchoq, do'stlar va hamkasblarning kayfiyatini ko'tarishning ajoyib usuli.\n📏 Hajmi: 10x6,5x7,5 sm\n🛒 Hoziroq buyurtma bering va quvonch ulashing!",
-      "characteristics": [
-        "Ixcham o'lcham - ko'p joy egallamaydi",
-        "Ekologik xavfsiz - zararsiz materiallardan tayyorlangan",
-        "Yengil vazn - olib yurish va tashish uchun qulay",
-        "Universal foydalanish - uy va ofis uchun mos keladi",
-        "Zamonaviy dizayn - har qanday interyerni to'ldiradi",
-        "Foydalanish oson - qulay va tushunarli boshqaruv",
-        "Ko'p funktsiyali - har xil maqsadlar uchun mos keladi",
-        "Ideal sovg'a - yaqinlar uchun ajoyib tanlov",
-        "Bardoshli - mustahkam qurilish va sifatli ishlab chiqarish",
-        "Sifatli material - uzoq muddatli foydalanish uchun mustahkam"
-      ]
-    },
-    "ru": {
-      "title": "Spider Box — деревянный ящик с пауком (Розыгрыш)",
-      "description": "КОРОБКА С ПАУКОМ – ИДЕАЛЬНА ДЛЯ РОЗЫГРЫШЕЙ!\n😱 Неожиданный сюрприз! Когда кто-то откроет коробку, оттуда выпрыгнет паук, вызвав бурю эмоций.\n🎁 Отличный подарок для друзей и семьи! Идеальный выбор, чтобы повеселить близких и увидеть их забавную реакцию.\n🔨 Качественные материалы! Коробка сделана из натурального дерева, прочная и долговечная.\n😂 Веселье и смех! Прекрасный способ разнообразить любую вечеринку, день рождения или обычный день.\n🕷 Реалистичный паук! Черный паук выглядит настолько правдоподобно, что пугает с первого взгляда.\n✔ Механический принцип работы! Не требует батареек – просто откройте крышку.\n💡 Подходит для всех! Веселая игрушка как для взрослых, так и для детей, отличный способ поднять настроение друзьям и коллегам.\n📏 Размер: 10x6.5x7.5 см\n🛒 Заказывайте прямо сейчас и дарите радость!",
-      "characteristics": [
-        "Компактный размер – не занимает много места",
-        "Экологическая безопасность – изготовлен из безвредных материалов",
-        "Лёгкий вес – удобно носить и транспортировать",
-        "Универсальное применение – подходит для дома и офиса",
-        "Современный дизайн – дополняет любой интерьер",
-        "Простота в использовании – удобное и понятное управление",
-        "Многофункциональность – подходит для различных целей",
-        "Идеальный подарок – отличный выбор для близких",
-        "Долговечность – прочная конструкция и качественное производство",
-        "Качественный материал – прочный для долгого использования"
-      ]
-    },
-    "source": "yandex",
-    "id": 14,
-    "gallery": [],
-    "variants": [],
-    "stockQuantity": 12,
-    "yandexUrl": "",
-    "costPrice": "10 000 so'm"
+    "uzumId": 2178833,
+    "costPrice": "20 000 so'm"
   },
   {
     "price": "41 650 so'm",
@@ -567,61 +524,12 @@
         "Качественный материал – прочный для долгого использования"
       ]
     },
-    "stockQuantity": 0,
+    "stockQuantity": 20,
     "source": "direct",
     "id": 15,
     "gallery": [],
-    "variants": []
-  },
-  {
-    "price": "62 250 so'm",
-    "category": "Go'zallik",
-    "image": "https://images.uzum.uz/d557qv3s2tab83s7uhe0/original.jpg",
-    "uzumUrl": "https://uzum.uz/ru/product/nabor-gubnykh-pomad-2178833",
-    "inStock": true,
-    "gallery": [
-      "https://images.uzum.uz/d557qv3s2tab83s7uhe0/original.jpg",
-      "https://images.uzum.uz/d4qbh6btqdhgicasmeug/original.jpg",
-      "https://images.uzum.uz/d4qbh6gjsv1o95cgn0v0/original.jpg",
-      "https://images.uzum.uz/d4qbh6rtqdhgicasmevg/original.jpg",
-      "https://images.uzum.uz/d4qbh6js2taeh326shog/original.jpg"
-    ],
-    "uz": {
-      "title": "Lana Del Rey lab bo'yog'i to'plami (4 rang)",
-      "description": "Lana Del Rey 4 ta rangli lab bo'yog'i to'plami - bu shunchaki kosmetika mahsuloti emas, balki qiyofa, kayfiyat va uslubni ta'kidlaydigan to'liq aksessuardir. To'plamga har kuni foydalanish uchun ham, kechki tadbirlar uchun ham mos tushadigan to'rtta universal rang kiradi. Har bir lab bo'yog'i yumshoq kremsi tuzilishga ega bo'lib, u tekis qatlamda surtiladi va lablarda og'irlik hissini keltirib chiqarmaydi. Namlantiruvchi komponentlar tufayli lab bo'yog'i kun davomida lablarni quritmaydi va chiroyli, parvarish qilingan ko'rinishni ta'minlaydi. Bardoshli pigment uzoq vaqt saqlanib qoladi, ovqatlanish va ichimliklardan keyin ham o'chib ketmaydi. To'plamning asosiy afzalliklaridan biri uning g'ayritabiiy qadog'idir: sigaret qutisi ko'rinishidagi zamonaviy kreativ quti. Bunday dizayn to'plamni nafaqat kosmetika vositasi, balki foto, video va sovg'alar uchun juda mos tushadigan moddiy elementga aylantiradi. Qadoqlash e'tiborni tortadi, yorqin, zamonaviy va standart kosmetik qutilardan ajralib turadi.",
-      "characteristics": [
-        "To'plamga har qanday ko'rinish uchun 4 ta universal va ommabop soya kiradi",
-        "Bardoshli pigment uzoq davom etadi va to'yinganlikni saqlaydi",
-        "Kunduzgi va kechki pardoz uchun mos keladi",
-        "Foto, video va kontent yaratish uchun ajoyib tanlov",
-        "Qizlar va kosmetika ixlosmandlari uchun ideal sovg'a",
-        "Kremsi yumshoq tuzilish oson surtiladi va lablarni og'irlashtirmaydi",
-        "Namlantiruvchi formula lab terisini quritmaydi",
-        "Zamonaviy sigaret qutisi ko'rinishidagi noyob qadoqlash boshqalardan ajralib turadi",
-        "Yilni format sumkada yoki yo'lda olib yurish uchun qulay",
-        "Har bir lab bo'yog'i gigienik tarzda qadoqlangan va ishonchli himoyalangan"
-      ]
-    },
-    "ru": {
-      "title": "Набор губных помад Lana Del Rey (4 цвета)",
-      "description": "Набор губных помад Lana Del Rey на 4 оттенка — это не просто косметический продукт, а полноценный аксессуар, который подчеркивает образ, настроение и стиль. В комплект входят четыре универсальных оттенка, идеально подходящих как для повседневного макияжа, так и для вечерних выходов. Каждая помада обладает мягкой кремовой текстурой, которая легко наносится, ложится ровным слоем и не создаёт тяжести на губах. Благодаря увлажняющим компонентам помада не сушит кожу губ, сохраняет комфорт на протяжении всего дня и обеспечивает естественный, ухоженный вид.",
-      "characteristics": [
-        "В набор входит 4 универсальных и популярных оттенка для любого образа",
-        "Стойкий пигмент держится долго и сохраняет насыщенность",
-        "Подходит как для дневного, так и для вечернего макияжа",
-        "Отличный выбор для фото, видео и создания контента",
-        "Идеальный вариант для подарка девушкам и любительницам косметики",
-        "Кремовая мягкая текстура легко наносится и не утяжеляет губы",
-        "Увлажняющая формула не сушит кожу губ",
-        "Уникальная упаковка в виде стильной сигаретной коробки выделяется среди других",
-        "Компактный формат удобен для ношения в сумке или в дороге",
-        "Каждая помада упакована гигиенично и надёжно защищена"
-      ]
-    },
-    "source": "yandex",
     "variants": [],
-    "stockQuantity": 12,
-    "id": 16
+    "costPrice": "10 000 so'm"
   },
   {
     "id": 17,
@@ -672,6 +580,149 @@
     "gallery": []
   },
   {
+    "price": "87 120 so'm",
+    "category": "Aksesuarlar",
+    "image": "https://images.uzum.uz/d3nltu34eu2imgle78v0/original.jpg",
+    "uzumUrl": "https://uzum.uz/ru/product/karmannye-chasy-s-karamelnyj---10-2032991?skuId=7247952",
+    "inStock": true,
+    "uz": {
+      "title": "Cho'ntak soati (Antikvar uslub)",
+      "description": "Ushbu nafis zanjirli cho'ntak soati bilan uslub va nafosat muhitiga sho'ng'ing. Korpus bardoshli sink qotishmasidan qilingan, shishasi yuqori sifatli va tirnalishga chidamli. Kvars mexanizmi aniqlik va ishonchlilikka kafolat beradi. Old qopqog'idagi nafis naqsh va orqa qismidagi o'yma naqsh soatga vintaj jozibasini beradi. 80 sm uzunlikdagi zanjir tufayli soatni cho'ntagingizda yoki bo'yningizda taqish qulay.\n📦 To'plamda: soat + zanjir\n🔋 Batareya turi: AG4 yoki analogi\n📐 Olchamlari: 6×4,6×1,5 sm\n🎁 Ota, hamkasb, do'st yoki yubiley uchun ideal sovg'a.",
+      "characteristics": [
+        "Antikvar uslubdagi oqlangan dizayn",
+        "Sink qotishmasidan tayyorlangan mustahkam korpus",
+        "Kvars mexanizmida ishlaydi, aniq harakat",
+        "Yuqori sifatli shisha bilan jihozlangan",
+        "Dekorativ naqshli old qopqoq",
+        "Uzunligi 80 sm bo'lgan metall zanjir",
+        "Cho'ntakda yoki bo'yinda taqish uchun mos",
+        "Almashtiriladigan batareya (AG4 yoki analogi)",
+        "Ixcham va yengil o'lcham (6×4,6×1,5 sm)",
+        "Sovg'a uchun ajoyib qulaylik"
+      ]
+    },
+    "ru": {
+      "title": "Карманные часы в антикварном стиле (Классика)",
+      "description": "Погрузитесь в атмосферу стиля и утончённости с этими элегантными карманными часами на цепочке. Корпус изготовлен из прочного цинкового сплава, стекло – качественное и устойчивое к царапинам. Кварцевый механизм гарантирует точность и надёжность. Передняя крышка с изящным узором и гравировка на задней части придают часам винтажный шарм. Благодаря цепочке длиной 80 см часы удобно носить в кармане или на шее.\n📦 В комплекте: часы + цепочка\n🔋 Тип батарейки: AG4 или аналог\n📐 Размеры: 6×4.6×1.5 см\n🎁 Идеальный подарок для отца, коллеги, друга или на юбилей.",
+      "characteristics": [
+        "Элегантный дизайн в антикварном стиле",
+        "Прочный корпус из цинкового сплава",
+        "Работает на кварцевом механизме, точный ход",
+        "Оснащён качественным стеклом",
+        "Передняя крышка с декоративным узором",
+        "Металлическая цепочка длиной 80 см",
+        "Подходит для ношения в кармане или на шее",
+        "Сменная батарейка (AG4 или аналог)",
+        "Компактный и лёгкий размер (6×4.6×1.5 см)",
+        "Отличный вариант для подарка"
+      ]
+    },
+    "stockQuantity": 20,
+    "source": "direct",
+    "id": 20,
+    "gallery": [],
+    "variants": [],
+    "costPrice": "20 000 so'm"
+  },
+  {
+    "price": "89 100 so'm",
+    "category": "Gadjetlar",
+    "image": "https://images.uzum.uz/d3u9frej76ol453ciji0/original.jpg",
+    "uzumUrl": "https://uzum.uz/ru/product/gf07-mini-gps-2056258?skuId=7325974",
+    "inStock": true,
+    "uz": {
+      "title": "GF-07 Mini GPS Tracker",
+      "description": "Kichik o'lcham, yengil vazn va tashish qulayligi. Yashirish oson bo'lgan qora korpus, transport vositalarini, o'smirlarni, turmush o'rtoqlarni, qariyalarni yoki aktivlarni kuzatish uchun ideal. Ichkarida ikkita kuchli magnit mavjud bo'lib, ular qo'shimcha o'rnatishsiz transport vositasiga osongina ulanadi. Sizga kerak bo'lgan narsa - real vaqt rejimida Internetda (Google xaritasi) kuzatishingiz va ko'rsatishingiz mumkin bo'lgan qurilmaga joylashtirish uchun ishlaydigan SIM-karta (bundan mustasno!). SIM-karta raqamini terish orqali sizi treker atrofidagi ovozni eshitishingiz mumkin, chiroqlar va shovqin yo'q.",
+      "characteristics": [
+        "Mahsulot turi: Kuzatuv qurilmasi",
+        "Tarmoq turi: GSM/GPRS",
+        "Ish kuchlanishi: 3,4-4,2 V doimiy tok",
+        "Chiqish quvvati: 5 V doimiy tok, 300-500 mA",
+        "Batareya quvvati: 3,7 V 400 mA/soat litiy-ion batareya",
+        "Aloqa chastotasi: 850/900/1800/1900 MGts",
+        "Zaryadlash kirishi: Kirish AC110-220V 50/60Hz",
+        "Saqlash harorati: -40 ℃ dan +85 ℃ gacha",
+        "Ishlash harorati: -20 ℃ dan +55 ℃ gacha",
+        "Kengaytirish kartalari: Mini TF karta",
+        "Uzluksiz qo'ng'iroqlar: 150-180 minut",
+        "Namlik diapazoni: kondensatsiyasiz 5%-95%",
+        "GPRS: yuklash 60, TCP/IP"
+      ]
+    },
+    "ru": {
+      "title": "GF-07 Mini GPS Tracker (Магнитный)",
+      "description": "Небольшой размер, легкий вес и удобство переноски. Черная оболочка, которую легко спрятать, идеальное отслеживание транспортных средств, подростков, супругов, пожилых людей или активов. Внутри находятся два мощных магнита, которые легко крепятся к транспортному средству без дополнительной установки. Все, что вам нужно, это рабочая SIM-карта (исключая!) для вставки в устройство, которое вы можете отслеживать и отображать в Интернете в режиме реального времени (карта Google). Набрав номер SIM-карты, вы можете слышать звук вокруг трекера, ни огней, ни шума",
+      "characteristics": [
+        "Тип товара: Устройство слежения",
+        "Тип сети: GSM/GPRS",
+        "Рабочее напряжение: 3,4-4,2 В постоянного тока",
+        "Выходная мощность: 5 В постоянного тока, 300-500 мА",
+        "Емкость аккумулятора: литий-ионный аккумулятор 3,7 В 400 мАч",
+        "Частота связи: 850/900/1800/1900 МГц",
+        "Вход для зарядки: Вход AC110-220V 50/60Hz",
+        "Температура хранения: от -40℃ до +85℃",
+        "Рабочая температура: от -20℃ до +55℃",
+        "Карты расширения: Mini TF карта",
+        "Непрерывные звонки: 150-180 мин.",
+        "Диапазон влажности: 5%-95% без конденсации",
+        "GPRS: загрузка 60, TCP/IP"
+      ]
+    },
+    "stockQuantity": 20,
+    "skuId": 7325974,
+    "uzumId": 2056258,
+    "source": "direct",
+    "id": 21,
+    "gallery": [],
+    "variants": [],
+    "costPrice": "25 000 so'm"
+  },
+  {
+    "price": "67 500 so'm",
+    "category": "Avto",
+    "image": "https://images.uzum.uz/d3g62h8op562uss35umg/original.jpg",
+    "uzumUrl": "https://uzum.uz/ru/product/protivoskolzyaschij-silikonovyj-kovrik-2005362?skuId=7105001",
+    "inStock": true,
+    "uz": {
+      "title": "Avtomobil uchun sirpanmaydigan silikon gilamcha",
+      "description": "Avtomobil panelidagi sirpanmaydigan gilamcha - tartib va qulaylik uchun eng yaxshi yechim! 🚗 Ushbu universal sirpanishga qarshi gilamcha bilan avtomobilingizda doimo tartib bo'ladi. Telefon, kalitlar, kartalar va boshqa mayda-chuyda narsalar endi panelda sirpanib ketmaydi.\n✅ Afzalliklari:\n- Sirpanishga qarshi material - telefon va kalitlarni ishonchli mahkamlaydi.\n- Telefon uchun maxsus ushlab turgich - navigatsiya va qo'ng'iroqlar uchun qulay.\n- Avto-vizitka funksiyasi - to'xtash joyida telefon raqamingizni qoldiring.\n- Universal o'lcham - har qanday avtomobil paneliga mos keladi.\n- Oson tozalash - suv bilan yuvish kifoya.\n- Issiq va sovuqqa chidamlilik - erimaydi va yorilmaydi.\n- Egiluvchan va bardoshli - uzoq vaqt xizmat qiladi.",
+      "characteristics": [
+        "Telefon uchun maxsus ushlab turgich bilan jihozlangan",
+        "Material: yuqori sifatli sirpanmaydigan silikon",
+        "Raqamni joylashtirish imkoniyati (avto-vizitka)",
+        "Universal o'lcham - har qanday avto paneliga mos keladi",
+        "Telefon, kalitlar, kartalar va mayda narsalarni qulay saqlaydi",
+        "Issiq va sovuqqa chidamli - erimaydi va yorilmaydi",
+        "G'amxo'rlik qilish oson - suv bilan yuvish mumkin",
+        "Egiluvchan va bardoshli - uzoq muddatli foydalanish",
+        "Yelim va mahkamlagichlarsiz o'rnatiladi",
+        "Zamonaviy dizayn"
+      ]
+    },
+    "ru": {
+      "title": "Противоскользящий силиконовый коврик для авто",
+      "description": "Противоскользящий коврик на панель автомобиля – лучшее решение для порядка и удобства! 🚗 С этим универсальным антискользящим ковриком в вашем авто всегда будет порядок. Телефон, ключи, карты и другие мелочи больше не будут скользить по панели.\n✅ Преимущества:\n- Противоскользящий материал – надёжно фиксирует телефон и ключи.\n- Специальный держатель для телефона – удобно для навигации и звонков.\n- Функция авто-визитки – оставляйте номер телефона при парковке.\n- Универсальный размер – подходит для любой панели автомобиля.\n- Лёгкая очистка – достаточно промыть водой.\n- Устойчивость к жаре и холоду – не плавится и не трескается.\n- Гибкий и прочный – служит долго.",
+      "characteristics": [
+        "Оснащён специальным держателем для телефона",
+        "Материал: высококачественный противоскользящий силикон",
+        "Возможность размещения номера (авто-визитка)",
+        "Универсальный размер – подходит для любой панели авто",
+        "Удобно хранит телефон, ключи, карты и мелкие предметы",
+        "Устойчив к жаре и холоду – не плавится и не трескается",
+        "Лёгкий в уходе – можно мыть водой",
+        "Гибкий и прочный – долговечный в использовании",
+        "Устанавливается без клея и креплений",
+        "Современный дизайн"
+      ]
+    },
+    "stockQuantity": 20,
+    "source": "direct",
+    "id": 22,
+    "gallery": [],
+    "variants": [],
+    "costPrice": "20 000 so'm"
+  },
+  {
     "price": "67 500 so'm",
     "category": "Sovg'a",
     "image": "https://images.uzum.uz/d55t2f7njr2qv2v2clfg/original.jpg",
@@ -707,13 +758,95 @@
         "Предоставляются инструкция и видео-руководство для пользователей"
       ]
     },
-    "stockQuantity": 0,
-    "yandexUrl": "https://uzum.uz/ru/product/snezhnyj-suvenir-na-2025331?skuId=7185689",
+    "stockQuantity": 20,
     "skuId": 7185689,
     "uzumId": 2025331,
-    "source": "yandex",
-    "id": 19,
+    "source": "direct",
+    "id": 23,
     "gallery": [],
-    "variants": []
+    "variants": [],
+    "costPrice": "20 000 so'm"
+  },
+  {
+    "price": "775 030 so'm",
+    "category": "Gadjetlar",
+    "image": "https://images.uzum.uz/d55t1f7njr2qv2v2ckv0/original.jpg",
+    "uzumUrl": "https://uzum.uz/ru/product/umnye-ochki-s-2102090?skuId=7521019",
+    "inStock": false,
+    "uz": {
+      "title": "AI funksiyali aqlli ko'zoynak (Kamera, Bluetooth)",
+      "description": "GL ONE aqlli ko'zoynaklari - bu kamera, Bluetooth quloqchinlari va onlayn tarjimonni o'zida mujassam etgan sun'iy intellektga ega yuqori texnologiyali gadjet. Toza ovoz yozish uchun shovqinni kamiyatirish (EIS) mikrofonlari bilan jihozlangan. Qo'llarni ishlatmasdan kontent yaratish, musiqa tinglash va qo'ng'iroqlarga javob berish imkonini beradi. Fayllarni bir zumda almashish uchun ilova orqali smartfon bilan sinxronlanadi.",
+      "characteristics": [
+        "Kamera: 8 MP HD",
+        "Video: Full HD 1080p / 30 kadr/sek",
+        "Ko'rish burchagi: 105°",
+        "Batareya: 270 mA/soat",
+        "Himoya: IP65 (namlik va changdan)",
+        "Ulanish: Bluetooth + Wi-Fi",
+        "Moslik: Android / iOS",
+        "Ilova: LensMoo"
+      ]
+    },
+    "ru": {
+      "title": "Умные очки с функциями AI (Камера, Bluetooth)",
+      "description": "Смарт-очки GL ONE — это высокотехнологичный гаджет с искусственным интеллектом, сочетающий в себе камеру, Bluetooth-наушники и онлайн-переводчик. Оснащены микрофоном с шумоподавлением (EIS) для чистой записи звука. Позволяют снимать контент, слушать музыку и отвечать на звонки без использования рук. Синхронизируются со смартфоном через приложение для мгновенного обмена файлами.",
+      "characteristics": [
+        "Камера: 8 МП HD",
+        "Видео: Full HD 1080p / 30 fps",
+        "Угол обзора: 105°",
+        "Аккумулятор: 270 мАч",
+        "Защита: IP65 (от влаги и пыли)",
+        "Подключение: Bluetooth + Wi-Fi",
+        "Совместимость: Android / iOS",
+        "Приложение: LensMoo"
+      ]
+    },
+    "stockQuantity": 5,
+    "skuId": 7521019,
+    "uzumId": 2102090,
+    "source": "direct",
+    "id": 24,
+    "gallery": [],
+    "variants": [],
+    "costPrice": "420 000 so'm"
+  },
+  {
+    "price": "94 050 so'm",
+    "category": "Hobbi",
+    "image": "https://images.uzum.uz/d3honeon274ld4u69cpg/original.jpg",
+    "uzumUrl": "https://uzum.uz/ru/product/derevyannaya-khlopushka-dlya-2009792?skuId=7124394",
+    "inStock": false,
+    "uz": {
+      "title": "Kino Xlopushka (20x20 sm)",
+      "description": "Professional video kontent yaratish uchun ajralmas aksessuar. Ushbu yog'och xlopushka suratga olish jarayonini tashkil qilish hamda audio va video yo'llarini sinxronlashtirishga yordam beradi. Zamonaviy va amaliy dizayn uni studiya dekoratsiyasi yoki mavzuviy fotosessiyalar uchun ajoyib rekvizitga aylantiradi.",
+      "characteristics": [
+        "Material: Bardoshli yuqori sifatli yog'och",
+        "Olchami: 20 x 20 sm (ixcham)",
+        "Yuzasi: Silliq, bo'r bilan yozish uchun mos",
+        "Ovoz: Baland va aniq qarsak",
+        "Maqsadi: Kinotasvirlar, fotosessiyalar, teatr",
+        "Bardoshli: Ko'p marta foydalanish, tozalash oson"
+      ]
+    },
+    "ru": {
+      "title": "Деревянная хлопушка для кино (20x20 см)",
+      "description": "Незаменимый аксессуар для создания профессионального видеоконтента. Эта деревянная хлопушка помогает организовать процесс съёмки и синхронизировать аудио- и видеодорожки. Стильный и практичный дизайн делает её отличным реквизитом для декора студии или тематических фотосессий.",
+      "characteristics": [
+        "Материал: Прочное высококачественное дерево",
+        "Размер: 20 x 20 см (компактная)",
+        "Поверхность: Гладкая, подходит для письма мелом",
+        "Звук: Громкий и четкий хлопок",
+        "Назначение: Киносъемки, фотосессии, театр",
+        "Долговечность: Многоразовое использование, легко очищается"
+      ]
+    },
+    "stockQuantity": 10,
+    "skuId": 7124394,
+    "uzumId": 2009792,
+    "source": "direct",
+    "id": 25,
+    "gallery": [],
+    "variants": [],
+    "costPrice": "30 000 so'm"
   }
 ]

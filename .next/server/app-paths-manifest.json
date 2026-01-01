@@ -1,17 +1,9 @@
 {
-  "/product/[id]/page": "app/product/[id]/page.js",
   "/page": "app/page.js",
+  "/product/[id]/page": "app/product/[id]/page.js",
   "/api/stock/route": "app/api/stock/route.js",
   "/api/products/route": "app/api/products/route.js",
-  "/api/orders/route": "app/api/orders/route.js",
-  "/api/roles/route": "app/api/roles/route.js",
-  "/api/products/sync/route": "app/api/products/sync/route.js",
-  "/api/uzum/orders/route": "app/api/uzum/orders/route.js",
-  "/api/admins/route": "app/api/admins/route.js",
   "/admin/page": "app/admin/page.js",
-  "/admin/orders/page": "app/admin/orders/page.js",
-  "/admin/categories/[slug]/unit-economics/page": "app/admin/categories/[slug]/unit-economics/page.js",
   "/admin/products/page": "app/admin/products/page.js",
-  "/admin/categories/[slug]/page": "app/admin/categories/[slug]/page.js",
-  "/admin/settings/page": "app/admin/settings/page.js"
+  "/admin/categories/[slug]/page": "app/admin/categories/[slug]/page.js"
 }

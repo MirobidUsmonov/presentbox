@@ -23,10 +23,10 @@ export default function Home() {
     // Let's go with availability for Uzum/Yandex, but Primary Source for Direct/China.
 
     // Actually, simple fitlering:
-    const uzumItems = t.items.filter((p: any) => p.uzumUrl || p.source === 'uzum');
-    const yandexItems = t.items.filter((p: any) => p.yandexUrl || p.source === 'yandex');
-    const directItems = t.items.filter((p: any) => p.source === 'direct');
-    const chinaItems = t.items.filter((p: any) => p.source === 'china');
+    const uzumItems = t.items.filter((p: any) => (p.uzumUrl || p.source === 'uzum') && p.inStock);
+    const yandexItems = t.items.filter((p: any) => (p.yandexUrl || p.source === 'yandex') && p.inStock);
+    const directItems = t.items.filter((p: any) => p.source === 'direct' && p.inStock);
+    const chinaItems = t.items.filter((p: any) => p.source === 'china' && p.inStock);
 
     return (
         <>

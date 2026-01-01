@@ -1,0 +1,49 @@
+[
+  {
+    "id": 1,
+    "name": "Super Admin",
+    "permissions": {
+      "products_view": true,
+      "products_manage": true,
+      "categories_view": true,
+      "categories_manage": true,
+      "orders_view": true,
+      "orders_manage": true,
+      "customers_view": true,
+      "settings_view": true,
+      "settings_manage": true
+    },
+    "isSystem": true
+  },
+  {
+    "id": 2,
+    "name": "Manager",
+    "permissions": {
+      "products_view": true,
+      "products_manage": true,
+      "categories_view": true,
+      "categories_manage": false,
+      "orders_view": true,
+      "orders_manage": true,
+      "customers_view": true,
+      "settings_view": false,
+      "settings_manage": false
+    },
+    "isSystem": false
+  },
+  {
+    "name": "Admin",
+    "permissions": {
+      "products_view": true,
+      "products_manage": true,
+      "categories_view": true,
+      "categories_manage": true,
+      "orders_view": true,
+      "orders_manage": true,
+      "customers_view": false,
+      "settings_view": false,
+      "settings_manage": false
+    },
+    "id": 3
+  }
+]

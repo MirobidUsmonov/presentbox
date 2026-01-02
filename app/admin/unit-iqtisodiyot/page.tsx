@@ -64,6 +64,7 @@ export default function UnitEconomicsPage() {
     const [loading, setLoading] = useState(true);
     const [timeRange, setTimeRange] = useState<TimeRange>('week');
     const [activeIndex, setActiveIndex] = useState(0);
+    const [chartMetric, setChartMetric] = useState<'sales' | 'profit'>('sales');
 
     const onPieEnter = useCallback((_: any, index: number) => {
         setActiveIndex(index);
@@ -203,11 +204,17 @@ export default function UnitEconomicsPage() {
                     name = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
                 }
 
+                // Calculate Profit for this order
+                let payout = order.sellerProfit;
+                if (!payout) payout = order.totalPrice - (order.commission || 0) - (order.logisticDeliveryFee || 0);
+                const profit = payout - (order.purchasePrice || 0);
+
                 const existing = acc.find(i => i.name === name);
                 if (existing) {
                     existing.sales += order.totalPrice;
+                    existing.profit += profit;
                 } else {
-                    acc.push({ name, sales: order.totalPrice });
+                    acc.push({ name, sales: order.totalPrice, profit });
                 }
                 return acc;
             }, []);
@@ -323,7 +330,24 @@ export default function UnitEconomicsPage() {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-200 dark:border-slate-700 min-h-[400px] lg:col-span-2">
-                    <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-6">↗ Sotuvlar Dinamikasi</h3>
+                    <div className="flex justify-between items-center mb-6">
+                        <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                            ↗ {chartMetric === 'sales' ? 'Sotuvlar Dinamikasi' : 'Foyda Dinamikasi'}
+                        </h3>
+                        <div className="relative">
+                            <select
+                                value={chartMetric}
+                                onChange={(e) => setChartMetric(e.target.value as 'sales' | 'profit')}
+                                className="appearance-none bg-slate-50 dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 py-1.5 pl-3 pr-8 rounded-lg text-sm font-medium focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                            >
+                                <option value="sales">Savdo (Tushum)</option>
+                                <option value="profit">Sof Foyda</option>
+                            </select>
+                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-500">
+                                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                            </div>
+                        </div>
+                    </div>
                     <div className="h-[300px] w-full">
                         <ResponsiveContainer width="100%" height="100%">
                             <BarChart data={filteredData.sales_dynamics}>
@@ -334,7 +358,13 @@ export default function UnitEconomicsPage() {
                                     cursor={{ fill: 'transparent' }}
                                     contentStyle={{ borderRadius: '8px', border: 'none', boxShadow: '0 4px 6px -1px rgb(0 0 0 / 0.1)' }}
                                 />
-                                <Bar dataKey="sales" fill="#f97316" radius={[4, 4, 0, 0]} barSize={40} />
+                                <Bar
+                                    dataKey={chartMetric}
+                                    fill={chartMetric === 'sales' ? '#f97316' : '#10b981'}
+                                    radius={[4, 4, 0, 0]}
+                                    barSize={40}
+                                    name={chartMetric === 'sales' ? "Sotuv" : "Foyda"}
+                                />
                             </BarChart>
                         </ResponsiveContainer>
                     </div>

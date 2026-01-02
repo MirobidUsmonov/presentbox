@@ -266,7 +266,7 @@ export default function OrdersPage() {
                         <tbody className="divide-y divide-gray-100 dark:divide-gray-800">
                             {loading ? (
                                 <tr>
-                                    <td colSpan={8} className="p-12 text-center text-gray-400 animate-pulse">{adminT?.loading || "Yuklanmoqda..."}</td>
+                                    <td colSpan={8} className="p-12 text-center text-gray-400 animate-pulse">{adminT?.loading || "Buyurtmalar yuklanmoqda..."}</td>
                                 </tr>
                             ) : filteredOrders.length === 0 ? (
                                 <tr>

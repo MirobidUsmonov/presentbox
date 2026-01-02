@@ -9,7 +9,7 @@ import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { LanguageSwitcher } from "@/components/ui/language-switcher";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
-    const [authorized, setAuthorized] = useState<boolean | null>(null);
+    const [authorized, setAuthorized] = useState<boolean | null>(true);
     const [user, setUser] = useState<any>(null);
     const [permissions, setPermissions] = useState<any>(null);
     const [roleName, setRoleName] = useState("");

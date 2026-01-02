@@ -238,6 +238,16 @@ export default function AdminProductsPage() {
                                         ? mainProduct.price
                                         : `${minPrice.toLocaleString()} - ${maxPrice.toLocaleString()} so'm`;
 
+                                    // Cost Price range calculation
+                                    const costPrices = groupProducts.map(p => parseInt((p.costPrice || "0").replace(/\D/g, '')) || 0);
+                                    const minCost = Math.min(...costPrices);
+                                    const maxCost = Math.max(...costPrices);
+                                    const costDisplay = (minCost === 0 && maxCost === 0)
+                                        ? "—"
+                                        : (minCost === maxCost
+                                            ? `${minCost.toLocaleString()} so'm`
+                                            : `${minCost.toLocaleString()} - ${maxCost.toLocaleString()} so'm`);
+
                                     return (
                                         <>
                                             {/* Group Header Row */}
@@ -266,7 +276,7 @@ export default function AdminProductsPage() {
                                                     {priceDisplay}
                                                 </td>
                                                 <td className="p-6 font-bold text-gray-900 dark:text-white">
-                                                    {groupProducts.length === 1 ? (mainProduct.costPrice || "—") : "Turli xil"}
+                                                    {costDisplay}
                                                 </td>
                                                 <td className="p-6 text-center">
                                                     <div className="flex flex-wrap items-center justify-center gap-1">

@@ -5,7 +5,7 @@ import { getProducts, saveProducts } from "@/lib/data";
 
 export async function POST() {
     try {
-        console.log("Starting Uzum FBO Order Sync (Financial Basis)...");
+        // console.log removed("Starting Uzum FBO Order Sync (Financial Basis)...");
 
         // 1. Identify Target Shop
         // We know from research/user that 85087 is the primary target.
@@ -27,7 +27,7 @@ export async function POST() {
         }
 
         const activeShopIds = shopIds.includes(targetShopId) ? [targetShopId] : [shopIds[0]];
-        console.log(`Syncing for shop(s): ${activeShopIds.join(',')}`);
+        // console.log removed(`Syncing for shop(s): ${activeShopIds.join(',')}`);
 
         // 2. Fetch Financial Orders from Dec 1st, 2025
         // Using Unix MS as per Uzum API requirements
@@ -37,7 +37,7 @@ export async function POST() {
         let financialData;
         try {
             financialData = await getFinancialOrders(activeShopIds, dateFrom, dateTo);
-            console.log(`Fetched ${financialData?.orderItems?.length || 0} financial items.`);
+            // console.log removed(`Fetched ${financialData?.orderItems?.length || 0} financial items.`);
         } catch (e: any) {
             console.error("Failed to fetch financial orders:", e.message);
             return NextResponse.json({ success: false, error: `Finance API Error: ${e.message}` }, { status: 500 });
@@ -59,7 +59,7 @@ export async function POST() {
         let catalogData;
         try {
             catalogData = await getShopProducts(targetShopId);
-            console.log(`Fetched ${catalogData?.productList?.length || 0} products from catalog.`);
+            // console.log removed(`Fetched ${catalogData?.productList?.length || 0} products from catalog.`);
         } catch (e: any) {
             console.warn("Failed to fetch product catalog, product card creation may be incomplete:", e.message);
         }
@@ -82,8 +82,8 @@ export async function POST() {
             }
         });
 
-        console.log(`Catalog Mapping: ${catalogMap.size} by SKU ID, ${skuTitleMap.size} by SKU Title (full).`);
-        console.log("Catalog Titles:", Array.from(skuTitleMap.keys()));
+        // console.log removed(`Catalog Mapping: ${catalogMap.size} by SKU ID, ${skuTitleMap.size} by SKU Title (full).`);
+        // console.log removed("Catalog Titles:", Array.from(skuTitleMap.keys()));
 
         // 5. Sync Products (Auto-create missing cards and update existing)
         const localProducts = getProducts();

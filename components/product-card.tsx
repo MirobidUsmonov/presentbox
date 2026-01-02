@@ -119,12 +119,12 @@ export function ProductCard({ product }: { product: ProductProps }) {
                 )}
             </div>
 
-            <div className="p-5 flex flex-col flex-1">
-                <h3 className="font-bold text-brand-dark dark:text-white text-lg mb-2 line-clamp-2 leading-snug">
+            <div className="p-3 sm:p-5 flex flex-col flex-1">
+                <h3 className="font-bold text-brand-dark dark:text-white text-sm sm:text-lg mb-2 line-clamp-2 leading-snug">
                     {product.title}
                 </h3>
-                <div className="mt-auto space-y-4">
-                    <p className="text-brand-orange dark:text-brand-orange font-extrabold text-xl">
+                <div className="mt-auto space-y-3 sm:space-y-4">
+                    <p className="text-brand-orange dark:text-brand-orange font-extrabold text-lg sm:text-xl">
                         {formattedPrice}
                     </p>
 
@@ -138,24 +138,24 @@ export function ProductCard({ product }: { product: ProductProps }) {
                             }}
                             className="flex items-center gap-2 py-1 px-1 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 hover:border-brand-orange transition-colors cursor-pointer w-fit max-w-full"
                         >
-                            <div className="w-6 h-6 rounded-full overflow-hidden bg-white border border-gray-100 shrink-0 relative">
+                            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden bg-white border border-gray-100 shrink-0 relative">
                                 {displaySeller.name === "Yandex Market" ? (
                                     <div className="absolute inset-0 bg-[#FC3F1D] flex items-center justify-center text-white text-[8px] font-bold">YM</div>
                                 ) : (
                                     <img src={displaySeller.logo} alt="" className="w-full h-full object-contain" />
                                 )}
                             </div>
-                            <span className="text-[10px] font-bold text-gray-600 dark:text-gray-400 truncate pr-2">
+                            <span className="text-[10px] sm:text-[10px] font-bold text-gray-600 dark:text-gray-400 truncate pr-2">
                                 {displaySeller.name}
                             </span>
                         </div>
                     )}
 
                     <div
-                        className="w-full flex items-center justify-between bg-gray-50 dark:bg-gray-700 group-hover:bg-brand-orange dark:group-hover:bg-brand-orange text-brand-dark dark:text-white group-hover:text-white font-semibold py-3 px-4 rounded-xl transition-colors"
+                        className="w-full flex items-center justify-between bg-gray-50 dark:bg-gray-700 group-hover:bg-brand-orange dark:group-hover:bg-brand-orange text-brand-dark dark:text-white group-hover:text-white font-semibold py-2 px-3 sm:py-3 sm:px-4 rounded-xl transition-colors text-xs sm:text-base"
                     >
                         <span>{t.products.details}</span>
-                        <ArrowRight size={18} />
+                        <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />
                     </div>
                 </div>
             </div>

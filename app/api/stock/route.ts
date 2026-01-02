@@ -48,23 +48,35 @@ export async function GET(request: Request) {
         }
 
         let stock = 0;
+        let price = 0;
+        let fullPrice = 0;
 
         if (skuId) {
             const sku = skuList.find((s: any) => String(s.id) === String(skuId));
             if (sku) {
                 stock = sku.availableAmount;
+                price = sku.purchasePrice;
+                fullPrice = sku.fullPrice;
             } else {
-                // SKU specified but not found? Fallback to first or logic?
-                // For now, let's fallback to the first one available or 0
-                stock = 0;
+                // SKU specified but not found? Fallback to first available
+                const firstAvailable = skuList.find((s: any) => s.availableAmount > 0) || skuList[0];
+                if (firstAvailable) {
+                    stock = firstAvailable.availableAmount;
+                    price = firstAvailable.purchasePrice;
+                    fullPrice = firstAvailable.fullPrice;
+                }
             }
         } else {
-            // No SKU specified, sum all available amounts? 
-            // Or just take the first one (often the default selected)
-            stock = skuList.reduce((acc: number, curr: any) => acc + curr.availableAmount, 0);
+            // No SKU specified, try to find the one that matches the product "minPrice" or just the first available
+            const firstAvailable = skuList.find((s: any) => s.availableAmount > 0) || skuList[0];
+            if (firstAvailable) {
+                stock = skuList.reduce((acc: number, curr: any) => acc + curr.availableAmount, 0); // Total stock
+                price = firstAvailable.purchasePrice;
+                fullPrice = firstAvailable.fullPrice;
+            }
         }
 
-        return NextResponse.json({ stock });
+        return NextResponse.json({ stock, price, fullPrice });
 
     } catch (error: any) {
         console.error('API Error:', error);

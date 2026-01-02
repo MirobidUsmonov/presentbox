@@ -1,7 +1,7 @@
 [
   {
     "id": 2,
-    "price": "50 000 so'm",
+    "price": "49 000 so'm",
     "category": "Hazil",
     "image": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/spider-box-derevyannyj-2025302?skuId=7185524",
@@ -45,7 +45,7 @@
   },
   {
     "id": 3,
-    "price": "67 500 so'm",
+    "price": "49 000 so'm",
     "category": "Sovg'a",
     "image": "https://images.uzum.uz/d55t2f7njr2qv2v2clfg/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/snezhnyj-suvenir-na-2025331?skuId=7185689",
@@ -80,14 +80,14 @@
         "Предоставляются инструкция и видео-руководство для пользователей"
       ]
     },
-    "stockQuantity": 52,
+    "stockQuantity": 53,
     "skuId": 7185689,
     "uzumId": 2025331,
     "costPrice": "20 000 so'm"
   },
   {
     "id": 4,
-    "price": "67 500 so'm",
+    "price": "75 000 so'm",
     "category": "Avto",
     "image": "https://images.uzum.uz/d3g62h8op562uss35umg/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/protivoskolzyaschij-silikonovyj-kovrik-2005362?skuId=7105001",
@@ -129,7 +129,7 @@
   },
   {
     "id": 5,
-    "price": "87 120 so'm",
+    "price": "99 000 so'm",
     "category": "Aksesuarlar",
     "image": "https://images.uzum.uz/d3nltu34eu2imgle78v0/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/karmannye-chasy-s-karamelnyj---10-2032991?skuId=7247952",
@@ -171,7 +171,7 @@
   },
   {
     "id": 6,
-    "price": "89 100 so'm",
+    "price": "99 000 so'm",
     "category": "Gadjetlar",
     "image": "https://images.uzum.uz/d3u9frej76ol453ciji0/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/gf07-mini-gps-2056258?skuId=7325974",
@@ -220,7 +220,7 @@
   },
   {
     "id": 7,
-    "price": "331 550 so'm",
+    "price": "349 000 so'm",
     "category": "Gadjetlar",
     "image": "https://images.uzum.uz/d3p3fsbs2ta8m27e48gg/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/ruchka-s-videokameroj-2038777",
@@ -256,11 +256,11 @@
         "Удобное подключение к ПК через USB"
       ]
     },
-    "stockQuantity": 31
+    "stockQuantity": 29
   },
   {
     "id": 8,
-    "price": "13 500 so'm",
+    "price": "15 000 so'm",
     "category": "Hazil",
     "image": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/dollar-suvenir-nenastoyaschie-2025367?skuId=7185912",
@@ -289,13 +289,13 @@
         "Высокая детализация: Четкая печать и яркие цвета"
       ]
     },
-    "stockQuantity": 38,
+    "stockQuantity": 39,
     "skuId": 7185910,
     "uzumId": 2025367
   },
   {
     "id": 9,
-    "price": "44 100 so'm",
+    "price": "49 000 so'm",
     "category": "Kiyim",
     "image": "https://images.uzum.uz/d3g6068n274tencldmv0/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/balaklava-sharfmaska-kapyushonsharf-belyj---5-2005361?skuId=7104998",
@@ -328,7 +328,7 @@
   },
   {
     "id": 10,
-    "price": "775 030 so'm",
+    "price": "799 000 so'm",
     "category": "Gadjetlar",
     "image": "https://images.uzum.uz/d55t1f7njr2qv2v2ckv0/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/umnye-ochki-s-2102090?skuId=7521019",
@@ -367,7 +367,7 @@
   },
   {
     "id": 11,
-    "price": "44 100 so'm",
+    "price": "49 000 so'm",
     "category": "Kiyim",
     "image": "https://images.uzum.uz/d3g60a0op562uss35u90/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/balaklava-sharfmaska-kapyushonsharf-khaki---9-2005361?skuId=7105000",
@@ -400,7 +400,7 @@
   },
   {
     "id": 12,
-    "price": "94 050 so'm",
+    "price": "99 000 so'm",
     "category": "Hobbi",
     "image": "https://images.uzum.uz/d3honeon274ld4u69cpg/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/derevyannaya-khlopushka-dlya-2009792?skuId=7124394",
@@ -434,7 +434,7 @@
     "uzumId": 2009792
   },
   {
-    "price": "62 250 so'm",
+    "price": "75 000 so'm",
     "category": "Go'zallik",
     "image": "https://images.uzum.uz/d557qv3s2tab83s7uhe0/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/nabor-gubnykh-pomad-2178833",
@@ -481,13 +481,13 @@
     "source": "direct",
     "id": 13,
     "variants": [],
-    "stockQuantity": 12,
+    "stockQuantity": 6,
     "skuId": 7811462,
     "uzumId": 2178833,
     "costPrice": "20 000 so'm"
   },
   {
-    "price": "41 650 so'm",
+    "price": "49 000 so'm",
     "category": "Hazil",
     "image": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/spider-box-derevyannyj-2025302?skuId=7185524",
@@ -524,7 +524,7 @@
         "Качественный материал – прочный для долгого использования"
       ]
     },
-    "stockQuantity": 20,
+    "stockQuantity": 0,
     "source": "direct",
     "id": 15,
     "gallery": [],
@@ -580,7 +580,7 @@
     "gallery": []
   },
   {
-    "price": "87 120 so'm",
+    "price": "99 000 so'm",
     "category": "Aksesuarlar",
     "image": "https://images.uzum.uz/d3nltu34eu2imgle78v0/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/karmannye-chasy-s-karamelnyj---10-2032991?skuId=7247952",
@@ -617,7 +617,7 @@
         "Отличный вариант для подарка"
       ]
     },
-    "stockQuantity": 20,
+    "stockQuantity": 15,
     "source": "direct",
     "id": 20,
     "gallery": [],
@@ -625,7 +625,7 @@
     "costPrice": "20 000 so'm"
   },
   {
-    "price": "89 100 so'm",
+    "price": "99 000 so'm",
     "category": "Gadjetlar",
     "image": "https://images.uzum.uz/d3u9frej76ol453ciji0/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/gf07-mini-gps-2056258?skuId=7325974",
@@ -668,7 +668,7 @@
         "GPRS: загрузка 60, TCP/IP"
       ]
     },
-    "stockQuantity": 20,
+    "stockQuantity": 13,
     "skuId": 7325974,
     "uzumId": 2056258,
     "source": "direct",
@@ -678,7 +678,7 @@
     "costPrice": "25 000 so'm"
   },
   {
-    "price": "67 500 so'm",
+    "price": "75 000 so'm",
     "category": "Avto",
     "image": "https://images.uzum.uz/d3g62h8op562uss35umg/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/protivoskolzyaschij-silikonovyj-kovrik-2005362?skuId=7105001",
@@ -715,7 +715,7 @@
         "Современный дизайн"
       ]
     },
-    "stockQuantity": 20,
+    "stockQuantity": 8,
     "source": "direct",
     "id": 22,
     "gallery": [],
@@ -723,7 +723,7 @@
     "costPrice": "20 000 so'm"
   },
   {
-    "price": "67 500 so'm",
+    "price": "49 000 so'm",
     "category": "Sovg'a",
     "image": "https://images.uzum.uz/d55t2f7njr2qv2v2clfg/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/snezhnyj-suvenir-na-2025331?skuId=7185689",
@@ -758,7 +758,7 @@
         "Предоставляются инструкция и видео-руководство для пользователей"
       ]
     },
-    "stockQuantity": 20,
+    "stockQuantity": 53,
     "skuId": 7185689,
     "uzumId": 2025331,
     "source": "direct",
@@ -768,7 +768,7 @@
     "costPrice": "20 000 so'm"
   },
   {
-    "price": "775 030 so'm",
+    "price": "799 000 so'm",
     "category": "Gadjetlar",
     "image": "https://images.uzum.uz/d55t1f7njr2qv2v2ckv0/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/umnye-ochki-s-2102090?skuId=7521019",
@@ -801,7 +801,7 @@
         "Приложение: LensMoo"
       ]
     },
-    "stockQuantity": 5,
+    "stockQuantity": 0,
     "skuId": 7521019,
     "uzumId": 2102090,
     "source": "direct",
@@ -811,7 +811,7 @@
     "costPrice": "420 000 so'm"
   },
   {
-    "price": "94 050 so'm",
+    "price": "99 000 so'm",
     "category": "Hobbi",
     "image": "https://images.uzum.uz/d3honeon274ld4u69cpg/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/derevyannaya-khlopushka-dlya-2009792?skuId=7124394",
@@ -840,7 +840,7 @@
         "Долговечность: Многоразовое использование, легко очищается"
       ]
     },
-    "stockQuantity": 10,
+    "stockQuantity": 0,
     "skuId": 7124394,
     "uzumId": 2009792,
     "source": "direct",

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Plus, Search, Trash2, Edit2, Loader2, Package, ChevronDown, ChevronRight, Layers } from "lucide-react";
+import { Plus, Search, Trash2, Edit2, Loader2, Package, ChevronDown, ChevronRight, Layers, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import { Product } from "@/lib/translations";
 import { useRouter } from "next/navigation";
@@ -13,6 +13,7 @@ export default function AdminProductsPage() {
     const [isLoading, setIsLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState("");
     const [expandedGroups, setExpandedGroups] = useState<string[]>([]);
+    const [isSyncing, setIsSyncing] = useState(false);
     const router = useRouter();
 
     const adminT = (t as any).admin;
@@ -30,6 +31,89 @@ export default function AdminProductsPage() {
             console.error("Failed to fetch products", error);
         } finally {
             setIsLoading(false);
+        }
+    };
+
+    const formatPrice = (p: number) => {
+        return p.toLocaleString('ru-RU').replace(',', ' ') + " so'm";
+    };
+
+    const syncAllProducts = async () => {
+        setIsSyncing(true);
+        let updatedCount = 0;
+        let checkedCount = 0;
+        let errorCount = 0;
+
+        try {
+            // Process sequentially to be safe
+            for (const product of products) {
+                if (product.uzumUrl) {
+                    checkedCount++;
+                    try {
+                        // 1. Fetch live data
+                        const encodedUrl = encodeURIComponent(product.uzumUrl);
+                        const stockRes = await fetch(`/api/stock?url=${encodedUrl}`);
+
+                        if (!stockRes.ok) {
+                            console.error(`Status error for ${product.id}`);
+                            errorCount++;
+                            continue;
+                        }
+
+                        const stockData = await stockRes.json();
+                        if (!stockData) {
+                            errorCount++;
+                            continue;
+                        }
+
+                        const newPrice = stockData.price;
+                        const newStock = stockData.stock;
+
+                        // 2. Check if update is needed
+                        const currentPriceVal = parseInt(product.price.replace(/\D/g, '')) || 0;
+                        const priceChanged = newPrice && newPrice !== currentPriceVal;
+                        const stockChanged = newStock !== undefined && newStock !== product.stockQuantity;
+
+                        if (priceChanged || stockChanged) {
+                            // 3. Update product
+                            const updatedProduct = {
+                                ...product,
+                                price: priceChanged ? formatPrice(newPrice) : product.price,
+                                stockQuantity: newStock !== undefined ? newStock : product.stockQuantity
+                            };
+
+                            const updateRes = await fetch('/api/products', {
+                                method: 'PUT',
+                                headers: { 'Content-Type': 'application/json' },
+                                body: JSON.stringify(updatedProduct)
+                            });
+
+                            if (updateRes.ok) {
+                                updatedCount++;
+                            } else {
+                                errorCount++;
+                            }
+                        }
+                    } catch (e) {
+                        console.error(`Failed to sync product ${product.id}`, e);
+                        errorCount++;
+                    }
+                }
+            }
+
+            await fetchProducts(); // Refresh list regardless
+
+            const message = language === 'uz'
+                ? `Tekshirildi: ${checkedCount}\nYangilandi: ${updatedCount}\nXatoliklar: ${errorCount}`
+                : `Проверено: ${checkedCount}\nОбновлено: ${updatedCount}\nОшибки: ${errorCount}`;
+
+            alert(message);
+
+        } catch (error) {
+            console.error("Sync failed", error);
+            alert("Sync Error");
+        } finally {
+            setIsSyncing(false);
         }
     };
 
@@ -87,13 +171,23 @@ export default function AdminProductsPage() {
                         {(adminT?.total_products_count || "Jami {count} ta mahsulot mavjud").replace('{count}', products.length.toString())}
                     </p>
                 </div>
-                <Link
-                    href="/admin/products/new"
-                    className="flex items-center gap-2 px-6 py-4 bg-brand-orange text-white font-black rounded-2xl shadow-xl hover:scale-105 transition-all active:scale-95"
-                >
-                    <Plus size={20} />
-                    {adminT?.add_new || "Yangi qo'shish"}
-                </Link>
+                <div className="flex gap-2">
+                    <button
+                        onClick={syncAllProducts}
+                        disabled={isSyncing}
+                        className="flex items-center gap-2 px-4 py-4 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 font-bold rounded-2xl shadow-sm border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all disabled:opacity-50"
+                    >
+                        <RefreshCw size={20} className={isSyncing ? "animate-spin" : ""} />
+                        {language === 'uz' ? "Narxlarni yangilash" : "Обновить цены"}
+                    </button>
+                    <Link
+                        href="/admin/products/new"
+                        className="flex items-center gap-2 px-6 py-4 bg-brand-orange text-white font-black rounded-2xl shadow-xl hover:scale-105 transition-all active:scale-95"
+                    >
+                        <Plus size={20} />
+                        {adminT?.add_new || "Yangi qo'shish"}
+                    </Link>
+                </div>
             </header>
 
             {/* Search and Filters */}

@@ -54,21 +54,21 @@ export default function Home() {
                 </div>
             </section>
 
-            <div className="bg-brand-bg dark:bg-gray-950 pb-16">
-                {/* Uzum Market Section */}
-                <ProductCarousel
-                    title={language === 'uz' ? "Uzum Marketdagi tovarlar" : "Товары на Uzum Market"}
-                    products={uzumItems}
-                    icon={<ShoppingBag className="text-[#7000FF]" />}
-                    color="text-[#7000FF]"
-                />
-
+            <div id="products" className="bg-brand-bg dark:bg-gray-950 pb-16 scroll-mt-24">
                 {/* Direct Buy Section */}
                 <ProductCarousel
                     title={language === 'uz' ? "To'g'ridan-to'g'ri xarid" : "Прямая покупка"}
                     products={directItems}
                     icon={<Zap className="text-brand-orange" />}
                     color="text-brand-orange"
+                />
+
+                {/* Uzum Market Section */}
+                <ProductCarousel
+                    title={language === 'uz' ? "Uzum Marketdagi tovarlar" : "Товары на Uzum Market"}
+                    products={uzumItems}
+                    icon={<ShoppingBag className="text-[#7000FF]" />}
+                    color="text-[#7000FF]"
                 />
 
                 {/* Yandex Market Section */}

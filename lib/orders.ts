@@ -12,13 +12,15 @@ if (!fs.existsSync(DATA_DIR)) {
 
 export interface Order {
     id: number;
-    productId: number;
-    productTitle: string;
-    productImage: string;
-    variant?: string;
-    price: string;
-    quantity: number;
-    totalPrice: number;
+    createdAt: string;
+    items: {
+        id: number;
+        title: string;
+        price: string;
+        image: string;
+        variant?: string;
+        quantity: number;
+    }[];
     customer: {
         firstName: string;
         lastName: string;
@@ -27,8 +29,12 @@ export interface Order {
         region: string;
         district: string;
     };
-    status: 'new' | 'accepted' | 'shipping' | 'delivered' | 'cancelled';
-    createdAt: string;
+    deliveryMethod: 'bts' | 'emu' | 'yandex_punkt' | 'yandex_taxi';
+    shippingCost: number;
+    tip?: number; // Optional tip amount
+    subtotal: number;
+    totalPrice: number;
+    status: 'new' | 'contacted' | 'accepted' | 'shipping' | 'delivered' | 'cancelled';
 }
 
 export function getOrders(): Order[] {

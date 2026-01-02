@@ -13,6 +13,8 @@ import { LanguageProvider } from "@/components/language-provider";
 import { ThemeProvider } from "@/components/theme-provider";
 import { LayoutWrapper } from "@/components/layout-wrapper";
 
+import Script from "next/script";
+
 export default function RootLayout({
     children,
 }: Readonly<{
@@ -20,6 +22,9 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="uz" suppressHydrationWarning>
+            <head>
+                <Script src="https://telegram.org/js/telegram-web-app.js" strategy="beforeInteractive" />
+            </head>
             <body className={montserrat.className}>
                 <ThemeProvider
                     attribute="class"

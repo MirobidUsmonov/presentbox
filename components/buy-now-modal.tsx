@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { X, Check } from "lucide-react";
+import { X, Check, Minus, Plus } from "lucide-react";
 
 interface BuyNowModalProps {
     isOpen: boolean;
@@ -31,27 +31,77 @@ const REGIONS_RU = [
     "Самаркандская область", "Сырдарьинская область", "Сурхандарьинская область"
 ];
 
+const DELIVERY_METHODS = [
+    { id: "bts", name_uz: "BTS Pochta", name_ru: "BTS Почта" },
+    { id: "emu", name_uz: "EMU Express Pochta", name_ru: "EMU Express Почта" },
+    { id: "yandex_punkt", name_uz: "Yandex Punkt (PVZ)", name_ru: "Yandex Пункт выдачи" },
+    { id: "yandex_taxi", name_uz: "Yandex Taxi", name_ru: "Yandex Такси" }
+];
+
 export function BuyNowModal({ isOpen, onClose, product, language }: BuyNowModalProps) {
     const [formData, setFormData] = useState({
         firstName: "",
         lastName: "",
-        phone: "+998",
+        phone: "+998 ",
         telegram: "",
         region: "",
         district: ""
     });
+    const [quantity, setQuantity] = useState(1);
+    const [deliveryMethod, setDeliveryMethod] = useState(DELIVERY_METHODS[0].id);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
 
     if (!isOpen) return null;
 
     const regions = language === 'uz' ? REGIONS_UZ : REGIONS_RU;
+    const basePrice = parseInt(product.price.replace(/\D/g, ''));
+    const subtotal = basePrice * quantity;
+    const shippingCost = subtotal > 100000 ? 0 : 25000;
+    const totalPrice = subtotal + shippingCost;
+
+    const handlePhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        let val = e.target.value;
+        // Ensure prefix
+        if (!val.startsWith("+998 ")) {
+            val = "+998 ";
+        }
+
+        // Allow only numbers and spaces
+        const raw = val.replace(/[^\d+ ]/g, "");
+
+        // Limit length (13 digits total: 998 + 9 digits = 12, plus + sign = 13. With spaces formatted it's longer)
+        // Simplified: just limit raw digits to 12 (998 + 9)
+        const digits = raw.replace(/\D/g, "");
+        if (digits.length > 12) return;
+
+        // Simple formatting
+        setFormData({ ...formData, phone: raw });
+    };
+
+    const handleQuantity = (delta: number) => {
+        const newQ = quantity + delta;
+        if (newQ >= 1 && newQ <= 100) {
+            setQuantity(newQ);
+        }
+    };
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        // Strict Phone Validation
+        const phoneDigits = formData.phone.replace(/\D/g, "");
+        if (phoneDigits.length !== 12) {
+            alert(language === 'uz' ? "Telefon raqam noto'g'ri kitirilgan!" : "Неверный формат номера телефона!");
+            return;
+        }
+
         setIsSubmitting(true);
 
         try {
+            const selectedMethod = DELIVERY_METHODS.find(m => m.id === deliveryMethod);
+            const methodName = language === 'uz' ? selectedMethod?.name_uz : selectedMethod?.name_ru;
+
             const response = await fetch('/api/orders', {
                 method: 'POST',
                 headers: {
@@ -63,8 +113,11 @@ export function BuyNowModal({ isOpen, onClose, product, language }: BuyNowModalP
                     productImage: product.image,
                     variant: product.variant,
                     price: product.price,
-                    quantity: 1,
-                    totalPrice: parseInt(product.price.replace(/\D/g, '')),
+                    quantity: quantity,
+                    subtotal: subtotal,
+                    shippingCost: shippingCost,
+                    totalPrice: totalPrice,
+                    deliveryMethod: methodName,
                     customer: formData
                 }),
             });
@@ -77,11 +130,12 @@ export function BuyNowModal({ isOpen, onClose, product, language }: BuyNowModalP
                     setFormData({
                         firstName: "",
                         lastName: "",
-                        phone: "+998",
+                        phone: "+998 ",
                         telegram: "",
                         region: "",
                         district: ""
                     });
+                    setQuantity(1);
                 }, 2000);
             }
         } catch (error) {
@@ -120,11 +174,96 @@ export function BuyNowModal({ isOpen, onClose, product, language }: BuyNowModalP
                 ) : (
                     <form onSubmit={handleSubmit} className="p-4 space-y-4">
                         {/* Product Summary */}
-                        <div className="flex items-center gap-3 bg-gray-50 dark:bg-gray-700/30 p-3 rounded-xl">
-                            <img src={product.image} alt={product.title} className="w-12 h-12 rounded-lg object-cover" />
-                            <div>
-                                <p className="text-sm font-medium text-gray-900 dark:text-white line-clamp-1">{product.title}</p>
-                                <p className="text-xs text-brand-orange font-bold">{product.price}</p>
+                        <div className="bg-gray-50 dark:bg-gray-700/30 p-3 rounded-xl space-y-3">
+                            <div className="flex items-center gap-3">
+                                <img src={product.image} alt={product.title} className="w-12 h-12 rounded-lg object-cover" />
+                                <div>
+                                    <p className="text-sm font-medium text-gray-900 dark:text-white line-clamp-1">{product.title}</p>
+                                    <p className="text-xs text-brand-orange font-bold">{product.price}</p>
+                                </div>
+                            </div>
+
+                            {/* Quantity Selector */}
+                            <div className="flex items-center justify-between border-t border-gray-200 dark:border-gray-600 pt-3">
+                                <span className="text-xs font-bold text-gray-500 dark:text-gray-400">
+                                    {language === 'uz' ? "Soni:" : "Количество:"}
+                                </span>
+                                <div className="flex items-center gap-3">
+                                    <button
+                                        type="button"
+                                        onClick={() => handleQuantity(-1)}
+                                        className="w-8 h-8 flex items-center justify-center bg-white dark:bg-gray-600 rounded-lg shadow-sm border border-gray-200 dark:border-gray-500 text-gray-600 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-500 transition-colors"
+                                    >
+                                        <Minus size={16} />
+                                    </button>
+                                    <span className="font-bold text-gray-900 dark:text-white w-4 text-center">{quantity}</span>
+                                    <button
+                                        type="button"
+                                        onClick={() => handleQuantity(1)}
+                                        className="w-8 h-8 flex items-center justify-center bg-white dark:bg-gray-600 rounded-lg shadow-sm border border-gray-200 dark:border-gray-500 text-gray-600 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-500 transition-colors"
+                                    >
+                                        <Plus size={16} />
+                                    </button>
+                                </div>
+                            </div>
+
+                            {/* Total Price & Delivery Summary */}
+                            <div className="border-t border-gray-200 dark:border-gray-600 pt-3 space-y-2">
+                                <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+                                    <span>{language === 'uz' ? "Mahsulot narxi:" : "Цена товара:"}</span>
+                                    <span>{subtotal.toLocaleString()} so'm</span>
+                                </div>
+                                <div className="flex items-center justify-between text-xs">
+                                    <span className="text-gray-500 dark:text-gray-400">
+                                        {language === 'uz' ? "Yetkazib berish:" : "Доставка:"}
+                                    </span>
+                                    <span className={shippingCost === 0 ? "text-green-500 font-bold" : "text-gray-900 dark:text-gray-200"}>
+                                        {shippingCost === 0
+                                            ? (language === 'uz' ? "Bepul" : "Бесплатно")
+                                            : `${shippingCost.toLocaleString()} so'm`}
+                                    </span>
+                                </div>
+                                <div className="flex items-center justify-between pt-2 border-t border-dashed border-gray-200 dark:border-gray-600">
+                                    <span className="text-sm font-bold text-gray-700 dark:text-gray-300">
+                                        {language === 'uz' ? "Jami:" : "Итого:"}
+                                    </span>
+                                    <span className="text-base font-black text-brand-orange">
+                                        {totalPrice.toLocaleString()} So'm
+                                    </span>
+                                </div>
+                                {shippingCost === 0 ? (
+                                    <p className="text-[10px] text-green-600 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded text-center font-medium animate-in zoom-in">
+                                        🎉 {language === 'uz' ? "100 000 so'mdan oshgani uchun yetkazib berish bepul!" : "Бесплатная доставка при заказе от 100 000 сум!"}
+                                    </p>
+                                ) : (
+                                    <p className="text-[10px] text-brand-orange bg-brand-orange/10 px-2 py-1 rounded text-center font-medium">
+                                        💡 {language === 'uz'
+                                            ? `Yana ${(100000 - subtotal).toLocaleString()} so'm savdo qiling va yetkazib berish bepul!`
+                                            : `Добавьте товаров еще на ${(100000 - subtotal).toLocaleString()} сум для бесплатной доставки!`}
+                                    </p>
+                                )}
+                            </div>
+                        </div>
+
+                        {/* Delivery Method Selector */}
+                        <div>
+                            <label className="block text-xs font-bold text-gray-700 dark:text-gray-300 mb-1">
+                                {language === 'uz' ? "Yetkazib berish turi" : "Способ доставки"}
+                            </label>
+                            <div className="grid grid-cols-2 gap-2">
+                                {DELIVERY_METHODS.map((method) => (
+                                    <button
+                                        key={method.id}
+                                        type="button"
+                                        onClick={() => setDeliveryMethod(method.id)}
+                                        className={`p-3 rounded-xl border text-left text-xs transition-all ${deliveryMethod === method.id
+                                            ? "border-brand-orange bg-brand-orange/5 text-brand-orange font-bold shadow-sm"
+                                            : "border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:border-gray-300 dark:hover:border-gray-500"
+                                            }`}
+                                    >
+                                        {language === 'uz' ? method.name_uz : method.name_ru}
+                                    </button>
+                                ))}
                             </div>
                         </div>
 
@@ -162,9 +301,11 @@ export function BuyNowModal({ isOpen, onClose, product, language }: BuyNowModalP
                             <input
                                 required
                                 type="tel"
+                                inputMode="numeric"
                                 className="w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 text-gray-900 dark:text-white border border-gray-200 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-brand-orange focus:border-transparent outline-none transition-all placeholder:text-gray-400"
                                 value={formData.phone}
-                                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                                onChange={handlePhoneChange}
+                                placeholder="+998 90 123 45 67"
                             />
                         </div>
 

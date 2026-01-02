@@ -31,7 +31,7 @@ export default function UzumUnitEconomics() {
 
                 // If no data is found, trigger an automatic sync to help the user
                 if (data.length === 0 && !isSyncing) {
-                    console.log("No data found, triggering auto-sync...");
+                    // console.log removed("No data found, triggering auto-sync...");
                     handleSync();
                 }
             }

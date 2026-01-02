@@ -546,7 +546,7 @@ export const translations = {
         },
         about: {
             title: "Nega aynan PresentBox?",
-            text: "Biz siz uchun eng sifatli va ommabop gadjetlarni saralab olamiz. Uzum Market orqali O'zbekiston bo'ylab istalgan nuqtaga yetkazib beramiz. Xaridingizdan mamnun bo'lishingiz biz uchun muhim.",
+            text: "Biz shunchaki do'kon emasmiz – biz trendlar yaratuvchimiz! PresentBox'da siz nafaqat gadjetlarni, balki ijtimoiy tarmoqlarni portlatayotgan eng so'nggi va noodatiy mahsulotlarni topasiz. Biz har kuni dunyo bo'ylab eng qaynoq yangiliklarni kuzatib boramiz va ularni birinchilardan bo'lib O'zbekistonga olib kelamiz. Sifat, tezkor yetkazib berish va o'zgacha uslub – bu bizning tashrif qog'ozimiz.",
         },
         footer: {
             support_btn: "Texnik yordamga yozish",
@@ -771,7 +771,7 @@ export const translations = {
         },
         about: {
             title: "Почему именно PresentBox?",
-            text: "Мы отбираем для вас самые качественные и популярные гаджеты. Доставляем в любую точку Узбекистана через Uzum Market. Ваше удовлетворение от покупки — наш приоритет.",
+            text: "Мы не просто магазин – мы создатели трендов! В PresentBox вы найдете не только гаджеты, но и самые последние и необычные товары, которые взрывают социальные сети. Мы ежедневно следим за самыми горячими новинками по всему миру и первыми привозим их в Узбекистан. Качество, быстрая доставка и уникальный стиль – это наша визитная карточка.",
         },
         footer: {
             support_btn: "Написать в техподдержку",

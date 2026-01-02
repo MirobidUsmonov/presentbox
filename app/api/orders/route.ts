@@ -18,11 +18,47 @@ export async function POST(request: Request) {
         const body = await request.json();
 
         // Basic validation
-        if (!body.customer || !body.productId) {
+        if (!body.customer || !body.items || body.items.length === 0) {
             return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
         }
 
         const newOrder = addOrder(body);
+
+        // Send Telegram Notification
+        try {
+            const { sendTelegramMessage } = await import('@/lib/telegram');
+            let tgUsername = newOrder.customer.telegram || "Yo'q";
+            if (tgUsername !== "Yo'q" && !tgUsername.startsWith('@')) {
+                tgUsername = `@${tgUsername}`;
+            }
+
+            const itemsList = newOrder.items.map((item: any, index: number) =>
+                `${index + 1}. ${item.title} ${item.variant ? `(${item.variant})` : ''} - ${item.quantity} x ${item.price}`
+            ).join('\n');
+
+            const message = `
+<b>📦 Yangi Buyurtma! #${newOrder.id}</b>
+
+👤 <b>Mijoz:</b> ${newOrder.customer.firstName} ${newOrder.customer.lastName}
+📞 <b>Tel:</b> ${newOrder.customer.phone}
+📍 <b>Manzil:</b> ${newOrder.customer.region}, ${newOrder.customer.district}
+
+🛒 <b>Mahsulotlar:</b>
+${itemsList}
+
+💰 <b>Subtotal:</b> ${newOrder.subtotal?.toLocaleString()} so'm
+🚚 <b>Yetkazib berish:</b> ${newOrder.deliveryMethod || "Noma'lum"}
+📦 <b>Dostavka narxi:</b> ${newOrder.shippingCost === 0 ? "Bepul" : newOrder.shippingCost?.toLocaleString() + " so'm"}
+☕ <b>Choychaqa:</b> ${newOrder.tip ? newOrder.tip.toLocaleString() + " so'm" : "0 so'm"}
+💵 <b>JAMI:</b> ${newOrder.totalPrice.toLocaleString()} so'm
+
+Telegram: ${tgUsername}
+`;
+            await sendTelegramMessage(message);
+        } catch (tgError) {
+            console.error("Failed to send Telegram notification:", tgError);
+        }
+
         return NextResponse.json(newOrder, { status: 201 });
     } catch (error) {
         console.error("Order creation error:", error);

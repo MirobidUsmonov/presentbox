@@ -50,10 +50,12 @@ export default function AdminDashboard() {
     const netProfit = orders
         .filter(o => o.status !== 'cancelled')
         .reduce((sum, order) => {
-            const product = products.find(p => p.id === order.productId);
-            const cost = product ? parsePrice(product.costPrice) : 0;
-            const totalCost = cost * order.quantity;
-            return sum + (order.totalPrice - totalCost);
+            const orderCost = (order.items || []).reduce((itemSum, item) => {
+                const product = products.find(p => p.id === item.id);
+                const cost = product ? parsePrice(product.costPrice) : 0;
+                return itemSum + (cost * item.quantity);
+            }, 0);
+            return sum + (order.totalPrice - orderCost);
         }, 0);
 
     const adminT = (t as any).admin;
@@ -71,36 +73,36 @@ export default function AdminDashboard() {
                     title={adminT?.total_revenue || "Jami tushum"}
                     value={`${totalRevenue.toLocaleString()} ${adminT?.currency || "so'm"}`}
                     icon={<DollarSign className="text-white" size={24} />}
-                    color="bg-gradient-to-br from-green-400 to-green-600"
+                    color="bg-gradient-to-br from-green-400 to-green-600 shadow-lg shadow-green-500/30"
                 />
                 <StatCard
                     title={adminT?.net_profit || "Sof foyda"}
                     value={`${netProfit.toLocaleString()} ${adminT?.currency || "so'm"}`}
                     icon={<TrendingUp className="text-white" size={24} />}
-                    color="bg-gradient-to-br from-indigo-400 to-indigo-600"
+                    color="bg-gradient-to-br from-indigo-400 to-indigo-600 shadow-lg shadow-indigo-500/30"
                 />
                 <StatCard
                     title={adminT?.today_sales || "Bugungi savdo"}
                     value={`${todayRevenue.toLocaleString()} ${adminT?.currency || "so'm"}`}
                     icon={<CheckCircle className="text-white" size={24} />}
-                    color="bg-gradient-to-br from-blue-400 to-blue-600"
+                    color="bg-gradient-to-br from-blue-400 to-blue-600 shadow-lg shadow-blue-500/30"
                 />
                 <StatCard
                     title={adminT?.total_orders || "Jami buyurtmalar"}
                     value={orders.length.toString()}
                     icon={<ShoppingBag className="text-white" size={24} />}
-                    color="bg-gradient-to-br from-orange-400 to-orange-600"
+                    color="bg-gradient-to-br from-orange-400 to-orange-600 shadow-lg shadow-orange-500/30"
                 />
                 <StatCard
                     title={adminT?.shipping_orders || "Yetkazish jarayonida"}
                     value={orders.filter(o => o.status === 'shipping').length.toString()}
                     icon={<Truck className="text-white" size={24} />}
-                    color="bg-gradient-to-br from-purple-400 to-purple-600"
+                    color="bg-gradient-to-br from-purple-400 to-purple-600 shadow-lg shadow-purple-500/30"
                 />
             </div>
 
             {/* Recent Orders Overview */}
-            <div className="bg-white dark:bg-gray-800 rounded-2xl border border-gray-200 dark:border-gray-700 p-6">
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-xl rounded-2xl border border-white/20 dark:border-gray-700/50 p-6 shadow-xl">
                 <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">{adminT?.order_status || "Buyurtmalar holati"}</h2>
 
                 <div className="space-y-4">

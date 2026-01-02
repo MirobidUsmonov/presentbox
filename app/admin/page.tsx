@@ -68,7 +68,7 @@ export default function AdminDashboard() {
             let cogs = 0;
             if (order.purchasePrice) {
                 // For Uzum orders, purchasePrice is the unit cost. Multiply by amount.
-                cogs = order.purchasePrice * (order.amount || 1);
+                cogs = order.purchasePrice * (order.items?.reduce((sum, item) => sum + item.quantity, 0) || 1);
             } else {
                 // Fallback for internal orders: calculate from products list
                 cogs = (order.items || []).reduce((itemSum, item) => {

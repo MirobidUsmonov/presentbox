@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -39,7 +38,7 @@ export default function OrdersPage() {
             const res = await fetch('/api/orders');
             if (res.ok) {
                 const data = await res.json();
-                setOrders(data);
+                setOrders(data.orders || []);
             }
         } catch (error) {
             console.error("Failed to fetch orders", error);
@@ -92,8 +91,7 @@ export default function OrdersPage() {
             const res = await fetch(`/api/orders?id=${id}`, { method: 'DELETE' });
             if (res.ok) {
                 const data = await res.json();
-                setOrders(data);
-                // Also close dropdown if open
+                await fetchOrders();
                 if (activeDropdownId === id) setActiveDropdownId(null);
             }
         } catch (error) {
@@ -137,11 +135,13 @@ export default function OrdersPage() {
     ];
 
     const filteredOrders = orders.filter(order => {
+        const searchLower = searchTerm.toLowerCase();
+
         const matchesSearch =
-            order.productTitle.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            order.customer.firstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            order.customer.lastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            order.customer.phone.includes(searchTerm);
+            (order.productTitle || '').toLowerCase().includes(searchLower) ||
+            (order.customer?.firstName || '').toLowerCase().includes(searchLower) ||
+            (order.customer?.lastName || '').toLowerCase().includes(searchLower) ||
+            (order.customer?.phone || '').includes(searchTerm);
 
         const matchesTab = activeTab === 'all' || order.status === activeTab;
 
@@ -246,11 +246,11 @@ export default function OrdersPage() {
                                             </div>
                                         </td>
                                         <td className="p-4">
-                                            <div className="font-bold text-gray-900 dark:text-white text-sm">{order.customer.firstName} {order.customer.lastName}</div>
-                                            <a href={`tel:${order.customer.phone}`} className="text-xs text-gray-500 hover:text-brand-orange block">
-                                                {order.customer.phone}
+                                            <div className="font-bold text-gray-900 dark:text-white text-sm">{order.customer?.firstName || 'Unknown'} {order.customer?.lastName || ''}</div>
+                                            <a href={`tel:${order.customer?.phone}`} className="text-xs text-gray-500 hover:text-brand-orange block">
+                                                {order.customer?.phone || ''}
                                             </a>
-                                            {order.customer.telegram && (
+                                            {order.customer?.telegram && (
                                                 <a href={`https://t.me/${order.customer.telegram.replace('@', '')}`} target="_blank" className="text-xs text-blue-500 hover:underline">
                                                     @{order.customer.telegram.replace('@', '')}
                                                 </a>
@@ -266,8 +266,8 @@ export default function OrdersPage() {
                                             </div>
                                         </td>
                                         <td className="p-4">
-                                            <div className="text-xs font-bold text-gray-700 dark:text-gray-300">{order.customer.region}</div>
-                                            <div className="text-xs text-gray-500 truncate max-w-[100px]" title={order.customer.district}>{order.customer.district}</div>
+                                            <div className="text-xs font-bold text-gray-700 dark:text-gray-300">{order.customer?.region || '-'}</div>
+                                            <div className="text-xs text-gray-500 truncate max-w-[100px]" title={order.customer?.district}>{order.customer?.district || '-'}</div>
                                         </td>
                                         <td className="p-4">
                                             <div className="font-bold text-gray-900 dark:text-white whitespace-nowrap">

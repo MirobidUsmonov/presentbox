@@ -21,7 +21,7 @@ export default function AdminDashboard() {
                 if (res.ok && productsRes.ok) {
                     const data = await res.json();
                     const productsData = await productsRes.json();
-                    setOrders(data);
+                    setOrders(data.orders || []);
                     setProducts(productsData);
                 }
             } catch (error) {

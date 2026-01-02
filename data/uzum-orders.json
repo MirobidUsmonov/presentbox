@@ -1,1302 +1,302 @@
 [
   {
+    "id": 175009320,
+    "orderId": 87065773,
+    "status": "CANCELED",
+    "date": 1767364104350,
+    "skuTitle": "PRESNT-QORSUVINER",
+    "productId": 2025331,
+    "productImage": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_240_high.jpg",
+    "sellPrice": 49000,
+    "amount": 0,
+    "commission": 0,
+    "sellerProfit": 0,
+    "logisticDeliveryFee": 0,
+    "purchasePrice": 20000
+  },
+  {
+    "id": 174975601,
+    "orderId": 87047127,
+    "status": "PROCESSING",
+    "date": 1767354368378,
+    "skuTitle": "PRESNT-LANADELREY",
+    "productId": 2178833,
+    "productImage": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_240_high.jpg",
+    "sellPrice": 75000,
+    "amount": 1,
+    "commission": 13500,
+    "sellerProfit": 56500,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 22000
+  },
+  {
+    "id": 174938126,
+    "orderId": 87026727,
+    "status": "PROCESSING",
+    "date": 1767343726732,
+    "skuTitle": "PRESNT-QORSUVINER",
+    "productId": 2025331,
+    "productImage": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_240_high.jpg",
+    "sellPrice": 49000,
+    "amount": 1,
+    "commission": 13230,
+    "sellerProfit": 30770,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 20000
+  },
+  {
+    "id": 174879898,
+    "orderId": 86995033,
+    "status": "PROCESSING",
+    "date": 1767305110842,
+    "skuTitle": "PRESNT-RUCHKA",
+    "productId": 2038777,
+    "productImage": "https://images.uzum.uz/d3p3fsbs2ta8m27e48gg/t_product_240_high.jpg",
+    "sellPrice": 349000,
+    "amount": 1,
+    "commission": 69800,
+    "sellerProfit": 274200,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 75000
+  },
+  {
+    "id": 174860154,
+    "orderId": 86985139,
+    "status": "PROCESSING",
+    "date": 1767294213172,
+    "skuTitle": "PRESNT-ORGIMCHAK",
+    "productId": 2025302,
+    "productImage": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
+    "sellPrice": 49000,
+    "amount": 1,
+    "commission": 8575,
+    "sellerProfit": 35425,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 10000
+  },
+  {
+    "id": 174856134,
+    "orderId": 86983129,
+    "status": "PROCESSING",
+    "date": 1767293031616,
+    "skuTitle": "PRESNT-RUCHKA",
+    "productId": 2038777,
+    "productImage": "https://images.uzum.uz/d3p3fsbs2ta8m27e48gg/t_product_240_high.jpg",
+    "sellPrice": 349000,
+    "amount": 1,
+    "commission": 69800,
+    "sellerProfit": 274200,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 75000
+  },
+  {
+    "id": 174846538,
+    "orderId": 86978161,
+    "status": "CANCELED",
+    "date": 1767290347635,
+    "skuTitle": "PRESNT-MINIDOLAR-100",
+    "productId": 2025367,
+    "productImage": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_240_high.jpg",
+    "sellPrice": 15000,
+    "amount": 0,
+    "commission": 0,
+    "sellerProfit": 0,
+    "logisticDeliveryFee": 0,
+    "purchasePrice": 3200
+  },
+  {
+    "id": 174816566,
+    "orderId": 86962132,
+    "status": "PROCESSING",
+    "date": 1767282195956,
+    "skuTitle": "PRESNT-QORSUVINER",
+    "productId": 2025331,
+    "productImage": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_240_high.jpg",
+    "sellPrice": 49000,
+    "amount": 1,
+    "commission": 13230,
+    "sellerProfit": 30770,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 20000
+  },
+  {
+    "id": 174808615,
+    "orderId": 86957722,
+    "status": "PROCESSING",
+    "date": 1767279773636,
+    "skuTitle": "PRESNT-DERJATEL",
+    "productId": 2005362,
+    "productImage": "https://images.uzum.uz/d3g62h8op562uss35umg/t_product_240_high.jpg",
+    "sellPrice": 75000,
+    "amount": 1,
+    "commission": 18750,
+    "sellerProfit": 51250,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 18500
+  },
+  {
+    "id": 174800046,
+    "orderId": 86953001,
+    "status": "PROCESSING",
+    "date": 1767277064612,
+    "skuTitle": "PRESNT-LAMP",
+    "productId": 2124866,
+    "productImage": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
+    "sellPrice": 75000,
+    "amount": 1,
+    "commission": 9000,
+    "sellerProfit": 61000,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 40000
+  },
+  {
+    "id": 174793483,
+    "orderId": 86949391,
+    "status": "PROCESSING",
+    "date": 1767274913715,
+    "skuTitle": "PRESNT-LAMP",
+    "productId": 2124866,
+    "productImage": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
+    "sellPrice": 75000,
+    "amount": 1,
+    "commission": 9000,
+    "sellerProfit": 61000,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 40000
+  },
+  {
+    "id": 174780888,
+    "orderId": 86942365,
+    "status": "CANCELED",
+    "date": 1767270398733,
+    "skuTitle": "PRESNT-RUCHKA",
+    "productId": 2038777,
+    "productImage": "https://images.uzum.uz/d3p3fsbs2ta8m27e48gg/t_product_240_high.jpg",
+    "sellPrice": 349000,
+    "amount": 0,
+    "commission": 0,
+    "sellerProfit": 0,
+    "logisticDeliveryFee": 0,
+    "purchasePrice": 75000
+  },
+  {
+    "id": 174773660,
+    "orderId": 86938404,
+    "status": "PROCESSING",
+    "date": 1767267941308,
+    "skuTitle": "PRESNT-BALAKLAVA-БЕЛЫЙ",
+    "productId": 2005361,
+    "productImage": "https://images.uzum.uz/d3g6068n274tencldmv0/t_product_240_high.jpg",
+    "sellPrice": 49000,
+    "amount": 1,
+    "commission": 14210,
+    "sellerProfit": 29790,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 13000
+  },
+  {
+    "id": 174722858,
+    "orderId": 86910150,
+    "status": "PROCESSING",
+    "date": 1767247829868,
+    "skuTitle": "PRESNT-SOAT-КАРМЛН",
+    "productId": 2032991,
+    "productImage": "https://images.uzum.uz/d3nltu34eu2imgle78v0/t_product_240_high.jpg",
+    "sellPrice": 99000,
+    "amount": 1,
+    "commission": 23760,
+    "sellerProfit": 70240,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 20000
+  },
+  {
+    "id": 174692076,
+    "orderId": 86893349,
+    "status": "CANCELED",
+    "date": 1767206751031,
+    "skuTitle": "PRESNT-LAMP",
+    "productId": 2124866,
+    "productImage": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
+    "sellPrice": 75000,
+    "amount": 0,
+    "commission": 0,
+    "sellerProfit": 0,
+    "logisticDeliveryFee": 0,
+    "purchasePrice": 40000
+  },
+  {
+    "id": 174691420,
+    "orderId": 86892953,
+    "status": "PROCESSING",
+    "date": 1767206282478,
+    "skuTitle": "PRESNT-LAMP",
+    "productId": 2124866,
+    "productImage": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
+    "sellPrice": 75000,
+    "amount": 1,
+    "commission": 9000,
+    "sellerProfit": 61000,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 40000
+  },
+  {
+    "id": 174637154,
+    "orderId": 86861888,
+    "status": "PROCESSING",
+    "date": 1767171317413,
+    "skuTitle": "PRESNT-ORGIMCHAK",
+    "productId": 2025302,
+    "productImage": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
+    "sellPrice": 49000,
+    "amount": 1,
+    "commission": 8575,
+    "sellerProfit": 35425,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 10000
+  },
+  {
+    "id": 174620991,
+    "orderId": 86852654,
+    "status": "PROCESSING",
+    "date": 1767162078906,
+    "skuTitle": "PRESNT-BALAKLAVA-БЕЛЫЙ",
+    "productId": 2005361,
+    "productImage": "https://images.uzum.uz/d3g6068n274tencldmv0/t_product_240_high.jpg",
+    "sellPrice": 49000,
+    "amount": 1,
+    "commission": 14210,
+    "sellerProfit": 29790,
+    "logisticDeliveryFee": 5000,
+    "purchasePrice": 13000
+  },
+  {
     "id": 174585103,
+    "orderId": 86833525,
     "status": "PROCESSING",
     "date": 1767121132319,
-    "orderId": 86833525,
     "skuTitle": "PRESNT-MINIDOLAR-10",
     "productId": 2025367,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/original.jpg",
-          "low": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/original.jpg",
-          "low": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lkr53q345l7k05kgg0",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
+    "productImage": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_240_high.jpg",
     "sellPrice": 15000,
     "amount": 1,
-    "amountReturns": 0,
     "commission": 4050,
     "sellerProfit": 5950,
-    "purchasePrice": 3200,
     "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
+    "purchasePrice": 3200
   },
   {
     "id": 174562425,
+    "orderId": 86821750,
     "status": "PROCESSING",
     "date": 1767114301484,
-    "orderId": 86821750,
     "skuTitle": "PRESNT-GPS",
     "productId": 2056258,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3u7gemj76ol453chovg/original.jpg",
-          "low": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3u7gemj76ol453chovg/original.jpg",
-          "low": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3u7gemj76ol453chovg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
+    "productImage": "https://images.uzum.uz/d3u7gemj76ol453chovg/t_product_240_high.jpg",
     "sellPrice": 99000,
     "amount": 1,
-    "amountReturns": 0,
     "commission": 29700,
     "sellerProfit": 64300,
-    "purchasePrice": 22000,
     "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174558316,
-    "status": "PROCESSING",
-    "date": 1767113135386,
-    "orderId": 86819591,
-    "skuTitle": "PRESNT-KINOXLAPLUSHKA",
-    "productId": 2009792,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/original.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/original.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3honeon274ld4u69cpg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 99000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 24750,
-    "sellerProfit": 69250,
-    "purchasePrice": 30000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174552566,
-    "status": "PROCESSING",
-    "date": 1767111378101,
-    "orderId": 86816483,
-    "skuTitle": "PRESNT-KINOXLAPLUSHKA",
-    "productId": 2009792,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/original.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/original.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3honeon274ld4u69cpg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3honeon274ld4u69cpg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 99000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 24750,
-    "sellerProfit": 69250,
-    "purchasePrice": 30000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174539390,
-    "status": "PROCESSING",
-    "date": 1767107329683,
-    "orderId": 86809396,
-    "skuTitle": "PRESNT-ORGIMCHAK",
-    "productId": 2025302,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lk3rrq345l7k05k9dg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 49000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 8575,
-    "sellerProfit": 35425,
-    "purchasePrice": 10000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174538442,
-    "status": "PROCESSING",
-    "date": 1767106990693,
-    "orderId": 86808886,
-    "skuTitle": "PRESNT-ORGIMCHAK",
-    "productId": 2025302,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lk3rrq345l7k05k9dg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 49000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 8575,
-    "sellerProfit": 35425,
-    "purchasePrice": 10000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174537671,
-    "status": "PROCESSING",
-    "date": 1767106716616,
-    "orderId": 86808427,
-    "skuTitle": "PRESNT-ORGIMCHAK",
-    "productId": 2025302,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lk3rrq345l7k05k9dg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 49000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 8575,
-    "sellerProfit": 35425,
-    "purchasePrice": 10000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174536702,
-    "status": "PROCESSING",
-    "date": 1767106412530,
-    "orderId": 86807918,
-    "skuTitle": "PRESNT-ORGIMCHAK",
-    "productId": 2025302,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lk3rrq345l7k05k9dg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 49000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 8575,
-    "sellerProfit": 35425,
-    "purchasePrice": 10000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174535892,
-    "status": "PROCESSING",
-    "date": 1767106132911,
-    "orderId": 86807493,
-    "skuTitle": "PRESNT-ORGIMCHAK",
-    "productId": 2025302,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lk3rrq345l7k05k9dg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 49000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 8575,
-    "sellerProfit": 35425,
-    "purchasePrice": 10000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174535703,
-    "status": "PROCESSING",
-    "date": 1767106077239,
-    "orderId": 86807409,
-    "skuTitle": "PRESNT-ORGIMCHAK",
-    "productId": 2025302,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lk3rrq345l7k05k9dg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 49000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 8575,
-    "sellerProfit": 35425,
-    "purchasePrice": 10000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174531343,
-    "status": "PROCESSING",
-    "date": 1767104639027,
-    "orderId": 86805073,
-    "skuTitle": "PRESNT-ORGIMCHAK",
-    "productId": 2025302,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lk3rrq345l7k05k9dg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 49000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 8575,
-    "sellerProfit": 35425,
-    "purchasePrice": 10000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174497226,
-    "status": "PROCESSING",
-    "date": 1767092229943,
-    "orderId": 86786469,
-    "skuTitle": "PRESNT-LAMP",
-    "productId": 2124866,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/original.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/original.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d4esjfmj76ooegrlsrog",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 75000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 9000,
-    "sellerProfit": 61000,
-    "purchasePrice": 40000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174480843,
-    "status": "PROCESSING",
-    "date": 1767086025055,
-    "orderId": 86777395,
-    "skuTitle": "PRESNT-ORGIMCHAK",
-    "productId": 2025302,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lk3rrq345l7k05k9dg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 49000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 8575,
-    "sellerProfit": 35425,
-    "purchasePrice": 10000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174468441,
-    "status": "PROCESSING",
-    "date": 1767081615308,
-    "orderId": 86770478,
-    "skuTitle": "PRESNT-LAMP",
-    "productId": 2124866,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/original.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/original.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d4esjfmj76ooegrlsrog",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 75000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 9000,
-    "sellerProfit": 61000,
-    "purchasePrice": 40000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174450688,
-    "status": "PROCESSING",
-    "date": 1767074449332,
-    "orderId": 86761018,
-    "skuTitle": "PRESNT-ORGIMCHAK",
-    "productId": 2025302,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lk3rrq345l7k05k9dg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 49000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 8575,
-    "sellerProfit": 35425,
-    "purchasePrice": 10000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174437081,
-    "status": "PROCESSING",
-    "date": 1767068753283,
-    "orderId": 86753650,
-    "skuTitle": "PRESNT-LANADELREY",
-    "productId": 2178833,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/original.jpg",
-          "low": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/original.jpg",
-          "low": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4qbh6btqdhgicasmeug/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d4qbh6btqdhgicasmeug",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 75000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 13500,
-    "sellerProfit": 56500,
-    "purchasePrice": 22000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174417806,
-    "status": "PROCESSING",
-    "date": 1767046390169,
-    "orderId": 86744013,
-    "skuTitle": "PRESNT-LAMP",
-    "productId": 2124866,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/original.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/original.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d4esjfmj76ooegrlsrog/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d4esjfmj76ooegrlsrog",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 75000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 9000,
-    "sellerProfit": 61000,
-    "purchasePrice": 40000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174377397,
-    "status": "PROCESSING",
-    "date": 1767031924813,
-    "orderId": 86724897,
-    "skuTitle": "PRESNT-AI",
-    "productId": 2102090,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/original.jpg",
-          "low": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/original.jpg",
-          "low": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d49fgvlsp2tr82i3pq60/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d49fgvlsp2tr82i3pq60",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": null,
-    "sellPrice": 799000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 159800,
-    "sellerProfit": 634200,
-    "purchasePrice": 420000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174355136,
-    "status": "PROCESSING",
-    "date": 1767027812386,
-    "orderId": 86713941,
-    "skuTitle": "PRESNT-ORGIMCHAK",
-    "productId": 2025302,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lk3rrq345l7k05k9dg",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": 1767092321485,
-    "sellPrice": 49000,
-    "amount": 1,
-    "amountReturns": 0,
-    "commission": 8575,
-    "sellerProfit": 35425,
-    "purchasePrice": 10000,
-    "logisticDeliveryFee": 5000,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": null,
-    "productTitle": null,
-    "returnCause": null
-  },
-  {
-    "id": 174353641,
-    "status": "CANCELED",
-    "date": 1767027516494,
-    "orderId": 86713138,
-    "skuTitle": "PRESNT-QORSUVINER",
-    "productId": 2025331,
-    "productImage": {
-      "photo": {
-        "60": {
-          "high": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_80_low.jpg"
-        },
-        "80": {
-          "high": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_80_high.jpg",
-          "low": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_80_low.jpg"
-        },
-        "120": {
-          "high": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_240_low.jpg"
-        },
-        "240": {
-          "high": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_240_low.jpg"
-        },
-        "480": {
-          "high": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_540_low.jpg"
-        },
-        "540": {
-          "high": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_540_high.jpg",
-          "low": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_540_low.jpg"
-        },
-        "720": {
-          "high": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/original.jpg",
-          "low": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_low.jpg"
-        },
-        "800": {
-          "high": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/original.jpg",
-          "low": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_low.jpg"
-        },
-        "24034": {
-          "high": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_240_high.jpg",
-          "low": "https://images.uzum.uz/d3lkfo3q345l7k05kcs0/t_product_240_low.jpg"
-        }
-      },
-      "photoKey": "d3lkfo3q345l7k05kcs0",
-      "color": null,
-      "hasVerticalPhoto": false
-    },
-    "shopId": 85087,
-    "dateIssued": 1767082273655,
-    "sellPrice": 75000,
-    "amount": 0,
-    "amountReturns": 1,
-    "commission": 0,
-    "sellerProfit": 0,
-    "purchasePrice": 20000,
-    "logisticDeliveryFee": 0,
-    "cancelled": null,
-    "withdrawnProfit": 0,
-    "comment": ",",
-    "productTitle": null,
-    "returnCause": "Клиент не указал причину"
+    "purchasePrice": 22000
   }
 ]

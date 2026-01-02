@@ -80,7 +80,7 @@
         "Предоставляются инструкция и видео-руководство для пользователей"
       ]
     },
-    "stockQuantity": 53,
+    "stockQuantity": 52,
     "skuId": 7185689,
     "uzumId": 2025331,
     "costPrice": "20 000 so'm"
@@ -216,7 +216,8 @@
     },
     "stockQuantity": 13,
     "skuId": 7325974,
-    "uzumId": 2056258
+    "uzumId": 2056258,
+    "costPrice": "22 000 so'm"
   },
   {
     "id": 7,
@@ -256,7 +257,8 @@
         "Удобное подключение к ПК через USB"
       ]
     },
-    "stockQuantity": 29
+    "stockQuantity": 29,
+    "costPrice": "75 000 so'm"
   },
   {
     "id": 8,
@@ -291,7 +293,8 @@
     },
     "stockQuantity": 39,
     "skuId": 7185910,
-    "uzumId": 2025367
+    "uzumId": 2025367,
+    "costPrice": "2 500 so'm"
   },
   {
     "id": 9,
@@ -324,7 +327,8 @@
         "Особенности: Быстро сохнет, легкая и компактная"
       ]
     },
-    "stockQuantity": 25
+    "stockQuantity": 25,
+    "costPrice": "20 000 so'm"
   },
   {
     "id": 10,
@@ -363,7 +367,8 @@
     },
     "stockQuantity": 0,
     "skuId": 7521019,
-    "uzumId": 2102090
+    "uzumId": 2102090,
+    "costPrice": "400 000 so'm"
   },
   {
     "id": 11,
@@ -396,7 +401,8 @@
         "Уход: Быстросохнущий материал"
       ]
     },
-    "stockQuantity": 25
+    "stockQuantity": 25,
+    "costPrice": "20 000 so'm"
   },
   {
     "id": 12,
@@ -431,7 +437,8 @@
     },
     "stockQuantity": 0,
     "skuId": 7124394,
-    "uzumId": 2009792
+    "uzumId": 2009792,
+    "costPrice": "30 000 so'm"
   },
   {
     "price": "75 000 so'm",
@@ -536,7 +543,7 @@
     "skuId": 7185910,
     "uzumId": 2025367,
     "price": "15000",
-    "costPrice": "0",
+    "costPrice": "2 500 so'm",
     "category": "Uzum",
     "image": "https://images.uzum.uz/d3lkr53q345l7k05kgg0/t_product_540_high.jpg",
     "uzumUrl": "https://uzum.uz/uz/product/2025367",
@@ -560,7 +567,7 @@
     "skuId": 7608280,
     "uzumId": 2124866,
     "price": "75000",
-    "costPrice": "0",
+    "costPrice": "25 000 so'm",
     "category": "Uzum",
     "image": "https://images.uzum.uz/d4g6gplv2sjnqk4i5750/t_product_540_high.jpg",
     "uzumUrl": "https://uzum.uz/uz/product/2124866?skuId=7608280",

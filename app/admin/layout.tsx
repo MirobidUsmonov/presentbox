@@ -159,13 +159,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                             <div className="space-y-1">
                                 <CategoryItem href="/admin/categories/uzum" color="bg-brand-orange shadow-brand-orange/20" label={((t as any)?.admin?.uzum) || "Uzum Market"} active={pathname === "/admin/categories/uzum"} />
                                 <Link
-                                    href="/admin/categories/uzum/unit-economics"
-                                    className={`flex items-center gap-3 px-10 py-2 rounded-2xl transition-all duration-300 font-bold text-xs ${pathname === "/admin/categories/uzum/unit-economics"
+                                    href="/admin/unit-iqtisodiyot"
+                                    className={`flex items-center gap-3 px-10 py-2 rounded-2xl transition-all duration-300 font-bold text-xs ${pathname === "/admin/unit-iqtisodiyot"
                                         ? 'text-brand-orange'
                                         : 'text-gray-400 hover:text-gray-900 dark:hover:text-gray-100'}`}
                                 >
                                     <ChevronRight size={14} />
-                                    <span>Unit Economics</span>
+                                    <span>Unit Iqtisodiyot</span>
                                 </Link>
                                 <CategoryItem href="/admin/categories/yandex" color="bg-yellow-400 shadow-yellow-400/20" label={((t as any)?.admin?.yandex) || "Yandex"} active={pathname === "/admin/categories/yandex"} />
                                 <CategoryItem href="/admin/categories/china" color="bg-red-500 shadow-red-500/20" label={((t as any)?.admin?.china) || "Xitoy"} active={pathname === "/admin/categories/china"} />

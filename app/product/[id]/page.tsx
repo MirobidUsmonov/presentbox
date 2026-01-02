@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useLanguage } from "@/components/language-provider";
@@ -526,28 +525,59 @@ export default function ProductPage() {
             {
                 isLightboxOpen && (
                     <div
-                        className="fixed inset-0 z-[1000] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-300"
+                        className="fixed inset-0 z-[1000] bg-black/95 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-300"
                         onClick={() => setIsLightboxOpen(false)}
                     >
+                        {/* Close Button */}
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
                                 setIsLightboxOpen(false);
                             }}
-                            className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full transition-colors z-50"
+                            className="absolute top-4 right-4 text-white p-3 hover:bg-white/10 rounded-full transition-colors z-[1010]"
                         >
-                            <X size={40} />
+                            <X size={32} />
                         </button>
 
+                        {/* Navigation Arrows */}
+                        {images.length > 1 && (
+                            <>
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        prevImage(e);
+                                    }}
+                                    disabled={images.indexOf(displayImage) === 0}
+                                    className={`absolute left-4 top-1/2 -translate-y-1/2 text-white p-3 rounded-full transition-all z-[1010] ${images.indexOf(displayImage) === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-white/10 hover:scale-110 cursor-pointer'}`}
+                                >
+                                    <ChevronLeft size={48} />
+                                </button>
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        nextImage(e);
+                                    }}
+                                    disabled={images.indexOf(displayImage) === images.length - 1}
+                                    className={`absolute right-4 top-1/2 -translate-y-1/2 text-white p-3 rounded-full transition-all z-[1010] ${images.indexOf(displayImage) === images.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-white/10 hover:scale-110 cursor-pointer'}`}
+                                >
+                                    <ChevronRight size={48} />
+                                </button>
+                            </>
+                        )}
+
+                        {/* Image Container */}
                         <div
                             className="relative w-full h-full flex items-center justify-center pointer-events-none"
                         >
                             <img
                                 src={displayImage}
                                 alt={product.title}
-                                className="max-w-full max-h-full object-contain pointer-events-auto cursor-default"
+                                className="max-w-full max-h-full object-contain pointer-events-auto cursor-default shadow-2xl"
                                 onClick={(e) => e.stopPropagation()}
                             />
+                            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm bg-black/50 px-3 py-1 rounded-full backdrop-blur-md">
+                                {images.indexOf(displayImage) + 1} / {images.length}
+                            </div>
                         </div>
                     </div>
                 )

@@ -35,9 +35,10 @@ export default function CustomersPage() {
         try {
             const res = await fetch('/api/orders');
             if (res.ok) {
-                const data: Order[] = await res.json();
-                setOrders(data);
-                processCustomers(data);
+                const data = await res.json();
+                const ordersList: Order[] = data.orders || [];
+                setOrders(ordersList);
+                processCustomers(ordersList);
             }
         } catch (error) {
             console.error("Failed to fetch orders", error);
@@ -50,26 +51,28 @@ export default function CustomersPage() {
         const customerMap = new Map<string, CustomerStats>();
 
         data.forEach(order => {
-            const phone = order.customer.phone;
+            if (!order.customer) return; // Skip if no customer data
+
+            const phone = order.customer.phone || 'Unknown';
             const existing = customerMap.get(phone);
 
             if (existing) {
                 existing.totalOrders += 1;
                 if (order.status === 'delivered') existing.deliveredOrders += 1;
-                existing.totalSpent += order.totalPrice;
+                existing.totalSpent += order.totalPrice || 0;
                 if (new Date(order.createdAt) > new Date(existing.lastOrderDate)) {
                     existing.lastOrderDate = order.createdAt;
                 }
             } else {
                 customerMap.set(phone, {
                     phone,
-                    fullName: `${order.customer.firstName} ${order.customer.lastName}`,
+                    fullName: `${order.customer.firstName || 'Unknown'} ${order.customer.lastName || ''}`,
                     totalOrders: 1,
                     deliveredOrders: order.status === 'delivered' ? 1 : 0,
-                    totalSpent: order.totalPrice,
+                    totalSpent: order.totalPrice || 0,
                     lastOrderDate: order.createdAt,
-                    region: order.customer.region,
-                    district: order.customer.district
+                    region: order.customer.region || 'Unknown',
+                    district: order.customer.district || 'Unknown'
                 });
             }
         });
@@ -79,8 +82,8 @@ export default function CustomersPage() {
 
     const filteredCustomers = customers
         .filter(c =>
-            c.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
-            c.phone.includes(searchTerm)
+            (c.fullName || '').toLowerCase().includes(searchTerm.toLowerCase()) ||
+            (c.phone || '').includes(searchTerm)
         )
         .sort((a, b) => {
             if (filter === 'most_spent') return b.totalSpent - a.totalSpent;
@@ -93,7 +96,8 @@ export default function CustomersPage() {
 
     // Group by region for Map
     const regionStats = customers.reduce((acc, curr) => {
-        acc[curr.region] = (acc[curr.region] || 0) + 1;
+        const region = curr.region || 'Unknown';
+        acc[region] = (acc[region] || 0) + 1;
         return acc;
     }, {} as Record<string, number>);
 

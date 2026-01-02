@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Check, ArrowLeft } from "lucide-react";
 import { useCartStore } from "@/lib/store";
 import Link from "next/link";
+import { useLanguage } from "@/components/language-provider";
 import { useRouter } from "next/navigation";
 
 const REGIONS_UZ = [
@@ -34,8 +35,7 @@ export default function CheckoutPage() {
     const { items, subtotal, clearCart, updateQuantity, removeItem } = useCartStore();
     const [isHydrated, setIsHydrated] = useState(false);
 
-    // Default language, could be fetched from context or url
-    const language = "uz";
+    const { language } = useLanguage();
 
     const regions = language === 'uz' ? REGIONS_UZ : REGIONS_RU;
 

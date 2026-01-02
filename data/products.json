@@ -291,7 +291,7 @@
         "Высокая детализация: Четкая печать и яркие цвета"
       ]
     },
-    "stockQuantity": 39,
+    "stockQuantity": 3,
     "skuId": 7185910,
     "uzumId": 2025367,
     "costPrice": "2 500 so'm"
@@ -327,7 +327,7 @@
         "Особенности: Быстро сохнет, легкая и компактная"
       ]
     },
-    "stockQuantity": 25,
+    "stockQuantity": 12,
     "costPrice": "20 000 so'm"
   },
   {
@@ -401,7 +401,7 @@
         "Уход: Быстросохнущий материал"
       ]
     },
-    "stockQuantity": 25,
+    "stockQuantity": 13,
     "costPrice": "20 000 so'm"
   },
   {
@@ -488,7 +488,7 @@
     "source": "direct",
     "id": 13,
     "variants": [],
-    "stockQuantity": 6,
+    "stockQuantity": 5,
     "skuId": 7811462,
     "uzumId": 2178833,
     "costPrice": "20 000 so'm"
@@ -765,7 +765,7 @@
         "Предоставляются инструкция и видео-руководство для пользователей"
       ]
     },
-    "stockQuantity": 53,
+    "stockQuantity": 52,
     "skuId": 7185689,
     "uzumId": 2025331,
     "source": "direct",

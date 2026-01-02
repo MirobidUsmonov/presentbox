@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "id": 1,
+    "createdAt": "2026-01-02T17:51:40.033Z",
+    "status": "new",
+    "items": [
+      {
+        "productId": 21,
+        "title": "GF-07 Mini GPS Tracker",
+        "quantity": 1,
+        "price": "99 000 so'm"
+      },
+      {
+        "productId": 13,
+        "title": "Набор губных помад Lana Del Rey (4 цвета)",
+        "quantity": 1,
+        "price": "75 000 so'm"
+      }
+    ],
+    "subtotal": 174000,
+    "shippingCost": 0,
+    "tip": 0,
+    "totalPrice": 174000,
+    "deliveryMethod": "Yandex Такси",
+    "customer": {
+      "firstName": "Mirobid",
+      "lastName": "Usmonov",
+      "phone": "+998 770454547",
+      "telegram": "mirobidusmonov",
+      "region": "г. Ташкент",
+      "district": "shayxontoxur"
+    }
+  }
+]

@@ -47,26 +47,46 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
                     setUser(userData);
 
                     // Fetch roles to get permissions
-                    const res = await fetch('/api/roles');
-                    if (res.ok) {
-                        const roles = await res.json();
-                        const userRole = roles.find((r: any) => r.id === userData.roleId);
-                        if (userRole) {
-                            setPermissions(userRole.permissions);
-                            setRoleName(userRole.name);
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+                    try {
+                        const res = await fetch('/api/roles', { signal: controller.signal });
+                        clearTimeout(timeoutId);
+
+                        if (res.ok) {
+                            const roles = await res.json();
+                            const userRole = roles.find((r: any) => r.id === userData.roleId);
+                            if (userRole) {
+                                setPermissions(userRole.permissions);
+                                setRoleName(userRole.name);
+                            }
                         }
+                    } catch (err) {
+                        clearTimeout(timeoutId);
+                        console.warn("Auth check timed out or failed", err);
                     }
                 } else {
                     // FALLBACK: Legacy session = Super Admin
-                    const res = await fetch('/api/roles');
-                    if (res.ok) {
-                        const roles = await res.json();
-                        const superAdminRole = roles.find((r: any) => r.id === 1);
-                        if (superAdminRole) {
-                            setPermissions(superAdminRole.permissions);
-                            setRoleName(superAdminRole.name);
-                            setUser({ username: "presentbox", fullName: "Super Admin" });
+                    const controller = new AbortController();
+                    const timeoutId = setTimeout(() => controller.abort(), 5000);
+
+                    try {
+                        const res = await fetch('/api/roles', { signal: controller.signal });
+                        clearTimeout(timeoutId);
+
+                        if (res.ok) {
+                            const roles = await res.json(); // ...
+                            const superAdminRole = roles.find((r: any) => r.id === 1);
+                            if (superAdminRole) {
+                                setPermissions(superAdminRole.permissions);
+                                setRoleName(superAdminRole.name);
+                                setUser({ username: "presentbox", fullName: "Super Admin" });
+                            }
                         }
+                    } catch (err) {
+                        clearTimeout(timeoutId);
+                        console.warn("Legacy auth check failed", err);
                     }
                 }
 

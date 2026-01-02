@@ -32,11 +32,15 @@ export default function OrdersPage() {
 
     useEffect(() => {
         const fetchData = async () => {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 10000); // 10s timeout
+
             try {
                 const [ordersRes, productsRes] = await Promise.all([
-                    fetch('/api/orders'),
-                    fetch('/api/products')
+                    fetch('/api/orders', { signal: controller.signal }),
+                    fetch('/api/products', { signal: controller.signal })
                 ]);
+                clearTimeout(timeoutId);
 
                 if (ordersRes.ok) {
                     const data = await ordersRes.json();
@@ -47,6 +51,7 @@ export default function OrdersPage() {
                     setProducts(productsData || []);
                 }
             } catch (error) {
+                clearTimeout(timeoutId);
                 console.error("Failed to fetch data", error);
             } finally {
                 setLoading(false);

@@ -3,24 +3,23 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, PieChart, Pie, Cell, Legend, Sector } from 'recharts';
 
-interface UzumOrder {
+// Adapted Interface mirroring the API response
+interface Order {
     id: number;
-    orderId: number;
+    // Order info
     status: string;
-    date: number;
-    skuTitle: string;
-    productId: number;
-    productImage?: {
-        photo: {
-            "60"?: { high: string; low: string; };
-        };
-    };
-    sellPrice: number;
-    purchasePrice: number;
-    amount: number;
+    createdAt: string; // ISO String
+
+    // Product info
+    productTitle: string;
+    productImage: string;
+
+    // Financials
+    totalPrice: number; // Revenue
+    purchasePrice: number; // Tan Narxi (COGS)
     commission: number;
-    sellerProfit: number;
     logisticDeliveryFee: number;
+    sellerProfit: number; // Payout from platform
 }
 
 type TimeRange = 'today' | 'week' | 'month' | 'all';
@@ -61,7 +60,7 @@ const renderActiveShape = (props: any) => {
 };
 
 export default function UnitEconomicsPage() {
-    const [orders, setOrders] = useState<UzumOrder[]>([]);
+    const [orders, setOrders] = useState<Order[]>([]);
     const [loading, setLoading] = useState(true);
     const [timeRange, setTimeRange] = useState<TimeRange>('week');
     const [activeIndex, setActiveIndex] = useState(0);
@@ -71,7 +70,7 @@ export default function UnitEconomicsPage() {
     }, []);
 
     const onPieLeave = useCallback(() => {
-        setActiveIndex(0); // Reset to "Sof Foyda" (index 0)
+        setActiveIndex(0); // Reset to "Sof Foyda"
     }, []);
 
     const fetchData = async () => {
@@ -106,6 +105,7 @@ export default function UnitEconomicsPage() {
     };
 
     const handleCostChange = async (orderId: number, newCost: number) => {
+        // Optimistic update
         const updatedOrders = orders.map(o => {
             if (o.id === orderId) {
                 return { ...o, purchasePrice: newCost };
@@ -122,7 +122,7 @@ export default function UnitEconomicsPage() {
             });
         } catch (error) {
             console.error("Failed to update cost", error);
-            fetchData();
+            fetchData(); // Revert on error
         }
     };
 
@@ -131,18 +131,32 @@ export default function UnitEconomicsPage() {
     }, []);
 
     const kpiStats = useMemo(() => {
-        const validOrders = orders.filter(o => o.status !== 'CANCELED' && o.status !== 'RETURNED');
+        // Filter out cancelled/returned for KPI
+        const validOrders = orders.filter(o =>
+            !['cancelled', 'returned', 'canceled'].includes(o.status.toLowerCase())
+        );
+
         const now = new Date();
         const todayStart = new Date(now.getFullYear(), now.getMonth(), now.getDate()).getTime();
         const weekStart = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000).getTime();
         const monthStart = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).getTime();
 
-        const calcProfit = (ords: UzumOrder[]) => ords.reduce((sum, o) => sum + (o.sellerProfit - (o.purchasePrice * o.amount)), 0);
-        const calcSales = (ords: UzumOrder[]) => ords.reduce((sum, o) => sum + (o.sellPrice * o.amount), 0);
+        // Profit = SellerProfit (Payout) - PurchasePrice (COGS)
+        // If sellerProfit is missing/0, fallback to Revenue - Expenses - COGS
+        const getNetProfit = (o: Order) => {
+            let payout = o.sellerProfit;
+            if (!payout) {
+                payout = o.totalPrice - (o.commission || 0) - (o.logisticDeliveryFee || 0);
+            }
+            return payout - (o.purchasePrice || 0);
+        };
 
-        const todaysOrders = validOrders.filter(o => o.date >= todayStart);
-        const weeklyOrders = validOrders.filter(o => o.date >= weekStart);
-        const monthlyOrders = validOrders.filter(o => o.date >= monthStart);
+        const calcProfit = (ords: Order[]) => ords.reduce((sum, o) => sum + getNetProfit(o), 0);
+        const calcSales = (ords: Order[]) => ords.reduce((sum, o) => sum + o.totalPrice, 0);
+
+        const todaysOrders = validOrders.filter(o => new Date(o.createdAt).getTime() >= todayStart);
+        const weeklyOrders = validOrders.filter(o => new Date(o.createdAt).getTime() >= weekStart);
+        const monthlyOrders = validOrders.filter(o => new Date(o.createdAt).getTime() >= monthStart);
 
         return {
             daily_sales: calcSales(todaysOrders),
@@ -159,38 +173,44 @@ export default function UnitEconomicsPage() {
         const monthStart = new Date(now.getTime() - 30 * 24 * 60 * 60 * 1000).getTime();
 
         let filtered = orders;
-        if (timeRange === 'today') filtered = orders.filter(o => o.date >= todayStart);
-        else if (timeRange === 'week') filtered = orders.filter(o => o.date >= weekStart);
-        else if (timeRange === 'month') filtered = orders.filter(o => o.date >= monthStart);
+        if (timeRange === 'today') filtered = orders.filter(o => new Date(o.createdAt).getTime() >= todayStart);
+        else if (timeRange === 'week') filtered = orders.filter(o => new Date(o.createdAt).getTime() >= weekStart);
+        else if (timeRange === 'month') filtered = orders.filter(o => new Date(o.createdAt).getTime() >= monthStart);
 
-        const validFiltered = filtered.filter(o => o.status !== 'CANCELED' && o.status !== 'RETURNED');
+        const validFiltered = filtered.filter(o => !['cancelled', 'returned', 'canceled'].includes(o.status.toLowerCase()));
 
-        const netProfit = validFiltered.reduce((sum, o) => sum + (o.sellerProfit - (o.purchasePrice * o.amount)), 0);
-        const totalCommission = validFiltered.reduce((sum, o) => sum + o.commission, 0);
-        const totalLogistics = validFiltered.reduce((sum, o) => sum + o.logisticDeliveryFee, 0);
-        const totalCostPrice = validFiltered.reduce((sum, o) => sum + (o.purchasePrice * o.amount), 0);
+        // Calculate Totals
+        const netProfit = validFiltered.reduce((sum, o) => {
+            let payout = o.sellerProfit;
+            if (!payout) payout = o.totalPrice - (o.commission || 0) - (o.logisticDeliveryFee || 0);
+            return sum + (payout - (o.purchasePrice || 0));
+        }, 0);
 
-        const salesByDay: { [key: string]: number } = {};
-        validFiltered.forEach(order => {
-            const d = new Date(order.date);
-            const dayName = d.toLocaleDateString('en-US', { weekday: 'short', day: 'numeric' });
-            salesByDay[dayName] = (salesByDay[dayName] || 0) + (order.sellPrice * order.amount);
-        });
+        const totalCommission = validFiltered.reduce((sum, o) => sum + (o.commission || 0), 0);
+        const totalLogistics = validFiltered.reduce((sum, o) => sum + (o.logisticDeliveryFee || 0), 0);
+        const totalCostPrice = validFiltered.reduce((sum, o) => sum + (o.purchasePrice || 0), 0);
 
-        const dynamicsData = [...validFiltered].sort((a, b) => a.date - b.date).reduce((acc: any[], order) => {
-            const d = new Date(order.date);
-            const name = timeRange === 'today'
-                ? d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' })
-                : d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+        // Dynamics Chart Data
+        const dynamicsData = [...validFiltered]
+            .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
+            .reduce((acc: any[], order) => {
+                const d = new Date(order.createdAt);
 
-            const existing = acc.find(i => i.name === name);
-            if (existing) {
-                existing.sales += (order.sellPrice * order.amount);
-            } else {
-                acc.push({ name, sales: (order.sellPrice * order.amount) });
-            }
-            return acc;
-        }, []);
+                let name = '';
+                if (timeRange === 'today') {
+                    name = d.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' });
+                } else {
+                    name = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+                }
+
+                const existing = acc.find(i => i.name === name);
+                if (existing) {
+                    existing.sales += order.totalPrice;
+                } else {
+                    acc.push({ name, sales: order.totalPrice });
+                }
+                return acc;
+            }, []);
 
         return {
             orders: filtered,
@@ -208,7 +228,7 @@ export default function UnitEconomicsPage() {
     if (loading) return <div className="min-h-screen flex items-center justify-center bg-slate-900 text-white">
         <div className="flex flex-col items-center gap-4">
             <div className="w-8 h-8 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
-            <p>Uzum'dan ma'lumotlar yangilanmoqda...</p>
+            <p>Ma'lumotlar yuklanmoqda...</p>
         </div>
     </div>;
 
@@ -219,7 +239,7 @@ export default function UnitEconomicsPage() {
         { name: 'Logistika', value: filteredData.costs.logistics, color: '#3b82f6' },
     ];
 
-    const hasCostData = costData.some(d => d.value > 0);
+    const hasCostData = Math.abs(filteredData.costs.net_profit) > 0 || filteredData.costs.cost_price > 0 || filteredData.costs.commission > 0;
 
     return (
         <div className="space-y-6">
@@ -234,9 +254,9 @@ export default function UnitEconomicsPage() {
             <header className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <div className="flex items-center gap-2 text-sm text-gray-400 mb-1">
-                        <span>Uzum Market</span>
+                        <span>Dashboard</span>
                         <span>/</span>
-                        <span className="bg-sky-900/30 text-sky-400 px-2 py-0.5 rounded text-xs font-bold border border-sky-800/50">UNIT IQTISODIYOT (FBO)</span>
+                        <span className="bg-sky-900/30 text-sky-400 px-2 py-0.5 rounded text-xs font-bold border border-sky-800/50">UNIT IQTISODIYOT</span>
                     </div>
                     <h1 className="text-3xl font-bold text-white mb-1">Yunit Iqtisodiyot</h1>
                     <p className="text-gray-400 text-sm">PresentBox do'koni tahlili (Real vaqt)</p>
@@ -248,8 +268,8 @@ export default function UnitEconomicsPage() {
                                 key={range}
                                 onClick={() => setTimeRange(range)}
                                 className={`px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${timeRange === range
-                                        ? 'bg-slate-600 text-white shadow-sm'
-                                        : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50'
+                                    ? 'bg-slate-600 text-white shadow-sm'
+                                    : 'text-slate-400 hover:text-slate-200 hover:bg-slate-700/50'
                                     }`}
                             >
                                 {range === 'today' && 'Bugun'}
@@ -374,7 +394,7 @@ export default function UnitEconomicsPage() {
                                 <th className="px-6 py-3">Rasm/ID</th>
                                 <th className="px-6 py-3">Mahsulot</th>
                                 <th className="px-6 py-3">Sana</th>
-                                <th className="px-6 py-3">Narx (x Soni)</th>
+                                <th className="px-6 py-3">Narx</th>
                                 <th className="px-6 py-3">Tan Narxi</th>
                                 <th className="px-6 py-3">Komissiya</th>
                                 <th className="px-6 py-3">Logistika</th>
@@ -384,47 +404,50 @@ export default function UnitEconomicsPage() {
                         </thead>
                         <tbody>
                             {filteredData.orders.map((order) => {
-                                const realNetProfit = order.sellerProfit - (order.purchasePrice * order.amount);
+                                let payout = order.sellerProfit;
+                                if (!payout) payout = order.totalPrice - (order.commission || 0) - (order.logisticDeliveryFee || 0);
+                                const realNetProfit = payout - (order.purchasePrice || 0);
+
                                 return (
-                                    <tr key={order.orderId} className="border-b border-slate-100 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">
+                                    <tr key={order.id} className="border-b border-slate-100 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-700/50">
                                         <td className="px-6 py-4 font-medium text-slate-900 dark:text-white">
                                             <div className="flex items-center gap-3">
-                                                {order.productImage?.photo?.['60']?.high && (
+                                                {order.productImage && (
                                                     <img
-                                                        src={order.productImage.photo['60'].high}
+                                                        src={order.productImage}
                                                         alt=""
                                                         className="w-10 h-10 rounded object-cover border border-slate-200"
                                                     />
                                                 )}
-                                                <span className="text-xs text-slate-400">#{order.orderId}</span>
+                                                <span className="text-xs text-slate-400">#{order.id}</span>
                                             </div>
                                         </td>
                                         <td className="px-6 py-4 text-slate-600 dark:text-slate-300">
-                                            <div className="font-medium text-slate-900 dark:text-white">{order.skuTitle}</div>
-                                            <div className="text-xs text-slate-500">{order.amount} dona</div>
+                                            <div className="font-medium text-slate-900 dark:text-white">{order.productTitle}</div>
                                         </td>
                                         <td className="px-6 py-4 text-slate-500 text-xs">
-                                            {new Date(order.date).toLocaleString()}
+                                            {new Date(order.createdAt).toLocaleString()}
                                         </td>
                                         <td className="px-6 py-4 font-medium text-slate-900 dark:text-white">
-                                            {(order.sellPrice * order.amount).toLocaleString()} so'm
+                                            {order.totalPrice.toLocaleString()} so'm
                                         </td>
                                         <td className="px-6 py-4 font-medium">
                                             <div className="relative group">
                                                 <input
                                                     type="number"
                                                     className="bg-transparent text-orange-500 w-24 border-b border-transparent focus:border-orange-500 focus:outline-none"
-                                                    value={order.purchasePrice}
+                                                    value={order.purchasePrice || ''}
                                                     onChange={(e) => handleCostChange(order.id, Number(e.target.value))}
+                                                    placeholder="0"
                                                 />
                                                 <span className="absolute -top-3 left-0 text-[10px] text-gray-400 opacity-0 group-hover:opacity-100 transition-opacity">tahrirlash</span>
                                             </div>
                                         </td>
                                         <td className="px-6 py-4 text-red-500">
-                                            -{order.commission.toLocaleString()}
+                                            -{(order.commission || 0).toLocaleString()}
                                         </td>
                                         <td className="px-6 py-4 text-blue-500">
-                                            -{order.logisticDeliveryFee.toLocaleString()}
+                                            -{(order.logisticDeliveryFee || 0).toLocaleString()}
                                         </td>
                                         <td className={`px-6 py-4 font-bold ${realNetProfit >= 0 ? 'text-emerald-500' : 'text-red-500'}`}>
                                             {realNetProfit >= 0 ? '+' : ''}{realNetProfit.toLocaleString()}
@@ -462,14 +485,17 @@ function StatCard({ icon, iconBg, badge, label, value }: { icon: string, iconBg:
 
 function StatusBadge({ status }: { status: string }) {
     const styles: { [key: string]: string } = {
-        PROCESSING: 'bg-blue-100 text-blue-700 border-blue-200',
-        DELIVERED: 'bg-green-100 text-green-700 border-green-200',
-        CANCELED: 'bg-red-100 text-red-700 border-red-200',
-        RETURNED: 'bg-orange-100 text-orange-700 border-orange-200'
+        processing: 'bg-blue-100 text-blue-700 border-blue-200',
+        delivered: 'bg-green-100 text-green-700 border-green-200',
+        cancelled: 'bg-red-100 text-red-700 border-red-200',
+        returned: 'bg-orange-100 text-orange-700 border-orange-200',
+        new: 'bg-indigo-100 text-indigo-700 border-indigo-200'
     };
 
+    const statusKey = status ? status.toLowerCase() : 'new';
+
     return (
-        <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${styles[status] || 'bg-gray-100 text-gray-700'}`}>
+        <span className={`px-2.5 py-1 rounded-full text-xs font-medium border ${styles[statusKey] || 'bg-gray-100 text-gray-700'}`}>
             {status}
         </span>
     );

@@ -264,7 +264,7 @@ export default function ProductPage() {
                                                     <div className="text-sm font-medium text-green-600 dark:text-green-400 mb-1">
                                                         {language === 'uz' ? `Omborda: ${totalStock} ta qoldi` : `На складе: осталось ${totalStock} шт`}
                                                     </div>
-                                                    {(totalStock <= 10) && (
+                                                    {(totalStock <= 30) && (
                                                         <div className="text-red-500 dark:text-red-400 font-bold text-sm flex items-center gap-1 animate-pulse">
                                                             <Flame size={16} fill="currentColor" />
                                                             {language === 'uz' ? "Tez orada tugaydi" : "Скоро закончится"}

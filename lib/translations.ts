@@ -537,6 +537,7 @@ export const translations = {
             popular_title: "Ommabop",
             popular_highlight: "tovarlar",
             details: "Batafsil",
+            low_stock: "Tez orada tugaydi",
         },
         benefits: {
             delivery: "Tezkor yetkazib berish",
@@ -548,6 +549,44 @@ export const translations = {
             title: "Nega aynan PresentBox?",
             text: "Biz shunchaki do'kon emasmiz – biz trendlar yaratuvchimiz! PresentBox'da siz nafaqat gadjetlarni, balki ijtimoiy tarmoqlarni portlatayotgan eng so'nggi va noodatiy mahsulotlarni topasiz. Biz har kuni dunyo bo'ylab eng qaynoq yangiliklarni kuzatib boramiz va ularni birinchilardan bo'lib O'zbekistonga olib kelamiz. Sifat, tezkor yetkazib berish va o'zgacha uslub – bu bizning tashrif qog'ozimiz.",
         },
+        faq: [
+            {
+                question: "Buyurtmani qanday rasmiylashtirsam bo‘ladi?",
+                answer: "Mahsulotni tanlab, “Savatga qo‘shish” tugmasini bosing. So‘ng savatga o‘ting, aloqa ma’lumotlaringizni to‘ldiring va qulay to‘lov usulini tanlab buyurtmani tasdiqlang. Jarayon bir necha daqiqa vaqt oladi."
+            },
+            {
+                question: "Buyurtma berish uchun ro‘yxatdan o‘tish shartmi?",
+                answer: "Yo‘q, ro‘yxatdan o‘tish majburiy emas. Siz mehmon sifatida ham buyurtma berishingiz mumkin."
+            },
+            {
+                question: "Buyurtmani bekor qilish yoki o‘zgartirish mumkinmi?",
+                answer: "Agar buyurtma hali yetkazib berishga topshirilmagan bo‘lsa, uni bekor qilish yoki o‘zgartirish mumkin. Buning uchun iloji boricha tezroq biz bilan bog‘lanishingizni so‘raymiz."
+            },
+            {
+                question: "Qaysi hududlarga yetkazib beriladi?",
+                answer: "Biz O‘zbekiston bo‘ylab yetkazib beramiz. Yirik shaharlarga yetkazib berish tezroq amalga oshiriladi, uzoq hududlarda esa yetkazish muddati biroz farq qilishi mumkin."
+            },
+            {
+                question: "Belgilangan vaqtda yetkazib berish mumkinmi?",
+                answer: "Ha, oldindan kelishilgan holda belgilangan sana yoki vaqt oralig‘ida yetkazib berish imkoniyati mavjud. Buyurtma berishda yoki operator bilan bog‘lanib ushbu talabni bildirishingiz mumkin."
+            },
+            {
+                question: "Qanday to‘lov usullari mavjud?",
+                answer: "Siz buyurtma uchun quyidagi usullar orqali to‘lov qilishingiz mumkin:\n- Naqd pul\n- Bank kartalari (Uzcard / Humo)\n- Onlayn to‘lov tizimlari"
+            },
+            {
+                question: "Naqd pul bilan to‘lash mumkinmi?",
+                answer: "Ha, albatta. Buyurtmani qabul qilganingizda kuryerga naqd pul bilan to‘lash imkoniyati mavjud."
+            },
+            {
+                question: "Nuqsonli mahsulot kelsa nima qilaman?",
+                answer: "Agar mahsulot nuqsonli yoki shikastlangan holatda yetib kelsa, darhol biz bilan bog‘laning. Biz vaziyatni o‘rganib chiqib, almashtirish yoki qaytarish masalasini tezkor hal qilamiz."
+            },
+            {
+                question: "Sizlar bilan qanday bog‘lanish mumkin?",
+                answer: "Biz bilan quyidagi usullar orqali bog‘lanishingiz mumkin:\n- Telefon orqali 77 045 45 47\n- Telegram orqali @mirobidusmonov\n\nOperatorlarimiz ish vaqtida sizning murojaatingizga tezkor javob beradi."
+            }
+        ],
         footer: {
             support_btn: "Texnik yordamga yozish",
             rights: "© 2025 PresentBox. Barcha huquqlar himoyalangan.",
@@ -762,6 +801,7 @@ export const translations = {
             popular_title: "Популярные",
             popular_highlight: "товары",
             details: "Подробнее",
+            low_stock: "Скоро закончится",
         },
         benefits: {
             delivery: "Быстрая доставка",
@@ -773,6 +813,44 @@ export const translations = {
             title: "Почему именно PresentBox?",
             text: "Мы не просто магазин – мы создатели трендов! В PresentBox вы найдете не только гаджеты, но и самые последние и необычные товары, которые взрывают социальные сети. Мы ежедневно следим за самыми горячими новинками по всему миру и первыми привозим их в Узбекистан. Качество, быстрая доставка и уникальный стиль – это наша визитная карточка.",
         },
+        faq: [
+            {
+                question: "Как оформить заказ?",
+                answer: "Выберите товар и нажмите кнопку «Добавить в корзину». Затем перейдите в корзину, заполните контактные данные, выберите удобный способ оплаты и подтвердите заказ. Процесс займет всего несколько минут."
+            },
+            {
+                question: "Обязательно ли регистрироваться для заказа?",
+                answer: "Нет, регистрация не обязательна. Вы можете оформить заказ как гость."
+            },
+            {
+                question: "Можно ли отменить или изменить заказ?",
+                answer: "Если заказ еще не передан в службу доставки, его можно отменить или изменить. Для этого просим связаться с нами как можно скорее."
+            },
+            {
+                question: "В какие регионы осуществляется доставка?",
+                answer: "Мы доставляем по всему Узбекистану. В крупные города доставка осуществляется быстрее, в отдаленные районы сроки могут немного отличаться."
+            },
+            {
+                question: "Можно ли заказать доставку к определенному времени?",
+                answer: "Да, по предварительной договоренности возможна доставка в определенную дату или временной интервал. Вы можете сообщить об этом при оформлении заказа или связавшись с оператором."
+            },
+            {
+                question: "Какие способы оплаты доступны?",
+                answer: "Вы можете оплатить заказ следующими способами:\n- Наличные\n- Банковские карты (Uzcard / Humo)\n- Системы онлайн-платежей"
+            },
+            {
+                question: "Можно ли оплатить наличными?",
+                answer: "Да, конечно. Есть возможность оплатить наличными курьеру при получении заказа."
+            },
+            {
+                question: "Что делать, если пришел бракованный товар?",
+                answer: "Если товар пришел с дефектом или поврежденным, немедленно свяжитесь с нами. Мы изучим ситуацию и оперативно решим вопрос с заменой или возвратом."
+            },
+            {
+                question: "Как с вами связаться?",
+                answer: "Вы можете связаться с нами следующими способами:\n- По телефону 77 045 45 47\n- Через Telegram @mirobidusmonov\n\nНаши операторы оперативно ответят на ваше обращение в рабочее время."
+            }
+        ],
         footer: {
             support_btn: "Написать в техподдержку",
             rights: "© 2025 PresentBox. Все права защищены.",

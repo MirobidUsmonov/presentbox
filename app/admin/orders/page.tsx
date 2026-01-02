@@ -13,6 +13,7 @@ export default function OrdersPage() {
     const statusT = adminT?.status;
 
     const [orders, setOrders] = useState<Order[]>([]);
+    const [products, setProducts] = useState<any[]>([]); // Store products to lookup images
     const [loading, setLoading] = useState(true);
     const [searchTerm, setSearchTerm] = useState("");
     const [activeTab, setActiveTab] = useState<Order['status'] | 'all'>('all');
@@ -30,7 +31,29 @@ export default function OrdersPage() {
     }, []);
 
     useEffect(() => {
-        fetchOrders();
+        const fetchData = async () => {
+            try {
+                const [ordersRes, productsRes] = await Promise.all([
+                    fetch('/api/orders'),
+                    fetch('/api/products')
+                ]);
+
+                if (ordersRes.ok) {
+                    const data = await ordersRes.json();
+                    setOrders(data.orders || []);
+                }
+                if (productsRes.ok) {
+                    const productsData = await productsRes.json();
+                    setProducts(productsData || []);
+                }
+            } catch (error) {
+                console.error("Failed to fetch data", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
     }, []);
 
     const fetchOrders = async () => {
@@ -42,9 +65,19 @@ export default function OrdersPage() {
             }
         } catch (error) {
             console.error("Failed to fetch orders", error);
-        } finally {
-            setLoading(false);
         }
+    };
+
+    const getProductImage = (productId: number) => {
+        const product = products.find(p => p.id === productId);
+        if (!product) return '/placeholder.png'; // Fallback if product not found
+
+        // Check various image properties
+        if (product.image) return product.image;
+        if (product.images && product.images.length > 0) return product.images[0];
+        if (product.gallery && product.gallery.length > 0) return product.gallery[0];
+
+        return '/placeholder.png'; // Fallback if no image found in product
     };
 
     const updateStatus = async (id: number, newStatus: Order['status']) => {
@@ -103,15 +136,17 @@ export default function OrdersPage() {
 
     const StatusBadge = ({ status }: { status: Order['status'] }) => {
         const styles = {
-            new: "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-400",
+            new: "bg-blue-50 text-blue-700 border border-blue-200 dark:bg-blue-900/20 dark:text-blue-400 dark:border-blue-800",
+            contacted: "bg-purple-100 text-purple-700 dark:bg-purple-900/30 dark:text-purple-400",
             accepted: "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-400",
             shipping: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400",
             delivered: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400",
             cancelled: "bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400"
         };
 
-        const labels = {
+        const labels: Record<string, string> = {
             new: ordersT?.tabs?.new || "Yangi",
+            contacted: "Bog'lanildi",
             accepted: ordersT?.tabs?.accepted || "Qabul qilindi",
             shipping: ordersT?.tabs?.shipping || "Yo'lda",
             delivered: ordersT?.tabs?.delivered || "Topshirildi",
@@ -126,15 +161,19 @@ export default function OrdersPage() {
     };
 
     const tabs: { id: Order['status'] | 'all', label: string, count: number }[] = [
-        { id: 'all', label: ordersT?.tabs?.all || "Barchasi", count: orders.length },
-        { id: 'new', label: ordersT?.tabs?.new || "Yangilar", count: orders.filter(o => o.status === 'new').length },
-        { id: 'accepted', label: ordersT?.tabs?.accepted || "Qabul qilindi", count: orders.filter(o => o.status === 'accepted').length },
-        { id: 'shipping', label: ordersT?.tabs?.shipping || "Yo'lda", count: orders.filter(o => o.status === 'shipping').length },
-        { id: 'delivered', label: ordersT?.tabs?.delivered || "Topshirildi", count: orders.filter(o => o.status === 'delivered').length },
-        { id: 'cancelled', label: ordersT?.tabs?.cancelled || "Bekor qilindi", count: orders.filter(o => o.status === 'cancelled').length },
+        { id: 'all', label: ordersT?.tabs?.all || "Barchasi", count: orders.filter(o => o.id < 100000).length },
+        { id: 'new', label: ordersT?.tabs?.new || "Yangilar", count: orders.filter(o => o.status === 'new' && o.id < 100000).length },
+        { id: 'accepted', label: ordersT?.tabs?.accepted || "Qabul qilindi", count: orders.filter(o => o.status === 'accepted' && o.id < 100000).length },
+        { id: 'shipping', label: ordersT?.tabs?.shipping || "Yo'lda", count: orders.filter(o => o.status === 'shipping' && o.id < 100000).length },
+        { id: 'delivered', label: ordersT?.tabs?.delivered || "Topshirildi", count: orders.filter(o => o.status === 'delivered' && o.id < 100000).length },
+        { id: 'cancelled', label: ordersT?.tabs?.cancelled || "Bekor qilindi", count: orders.filter(o => o.status === 'cancelled' && o.id < 100000).length },
     ];
 
     const filteredOrders = orders.filter(order => {
+        // Exclude Uzum orders (IDs > 100000). 
+        // Only show internal orders for management.
+        if (order.id > 100000) return false;
+
         const searchLower = searchTerm.toLowerCase();
 
         const matchesSearch =
@@ -257,12 +296,48 @@ export default function OrdersPage() {
                                             )}
                                         </td>
                                         <td className="p-4">
-                                            <div className="flex items-center gap-3">
-                                                <img src={order.productImage} alt="" className="w-10 h-10 rounded-lg object-cover bg-gray-100 border border-gray-200 dark:border-gray-700" />
-                                                <div className="max-w-[150px]">
-                                                    <div className="font-medium text-xs text-gray-900 dark:text-white line-clamp-2" title={order.productTitle}>{order.productTitle}</div>
-                                                    {order.variant && <span className="inline-block mt-1 px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-[10px] text-gray-500">{order.variant}</span>}
-                                                </div>
+                                            <div className="flex flex-col gap-2">
+                                                {/* Iterate through items if multiple */}
+                                                {order.items && order.items.length > 0 ? (
+                                                    order.items.map((item, idx) => (
+                                                        <div key={idx} className="flex items-center gap-3">
+                                                            <div className="relative">
+                                                                {/* Image with fallback */}
+                                                                <img
+                                                                    src={item.image || getProductImage(item.id || 0) || order.productImage || '/placeholder.png'}
+                                                                    onError={(e) => {
+                                                                        const target = e.target as HTMLImageElement;
+                                                                        target.src = '/placeholder.png'; // Fail-safe
+                                                                    }}
+                                                                    alt=""
+                                                                    className="w-8 h-8 rounded-md object-cover bg-gray-100 border border-gray-200 dark:border-gray-700"
+                                                                />
+                                                                <span className="absolute -bottom-1 -right-1 bg-gray-900 text-white text-[9px] px-1 rounded-full">{item.quantity}x</span>
+                                                            </div>
+                                                            <div className="max-w-[150px]">
+                                                                <div className="font-medium text-xs text-gray-900 dark:text-white line-clamp-1" title={item.title}>{item.title}</div>
+                                                                {item.variant && <span className="text-[10px] text-gray-500">{item.variant}</span>}
+                                                            </div>
+                                                        </div>
+                                                    ))
+                                                ) : (
+                                                    // Fallback to top-level product info
+                                                    <div className="flex items-center gap-3">
+                                                        <img
+                                                            src={order.productImage || getProductImage(order.id) || '/placeholder.png'}
+                                                            onError={(e) => {
+                                                                const target = e.target as HTMLImageElement;
+                                                                target.src = '/placeholder.png';
+                                                            }}
+                                                            alt=""
+                                                            className="w-10 h-10 rounded-lg object-cover bg-gray-100 border border-gray-200 dark:border-gray-700"
+                                                        />
+                                                        <div className="max-w-[150px]">
+                                                            <div className="font-medium text-xs text-gray-900 dark:text-white line-clamp-2" title={order.productTitle}>{order.productTitle}</div>
+                                                            {order.variant && <span className="inline-block mt-1 px-1.5 py-0.5 bg-gray-100 dark:bg-gray-700 rounded text-[10px] text-gray-500">{order.variant}</span>}
+                                                        </div>
+                                                    </div>
+                                                )}
                                             </div>
                                         </td>
                                         <td className="p-4">

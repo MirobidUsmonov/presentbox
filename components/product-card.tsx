@@ -32,6 +32,11 @@ export function ProductCard({ product }: { product: ProductProps }) {
         ? product.price
         : `${product.price} so'm`;
 
+    // Calculate simulated original price (e.g. +30%)
+    const rawPrice = parseInt(product.price.replace(/[^0-9]/g, '')) || 0;
+    const originalPrice = rawPrice * 1.3;
+    const formattedOriginalPrice = originalPrice.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ") + " so'm";
+
     // Seller prioritization logic
     let displaySeller = product.seller;
 
@@ -53,7 +58,7 @@ export function ProductCard({ product }: { product: ProductProps }) {
     return (
         <Link
             href={`/product/${product.id}`}
-            className="group block relative bg-white dark:bg-gray-800 rounded-[20px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-gray-700 h-full flex flex-col"
+            className="group/card block relative bg-white dark:bg-gray-800 rounded-[20px] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-gray-100 dark:border-gray-700 h-full flex flex-col"
         >
             <div className="aspect-[3/4] relative bg-gray-50 dark:bg-gray-900 overflow-hidden">
                 <div className="w-full h-full bg-white dark:bg-gray-900 flex items-center justify-center">
@@ -101,7 +106,7 @@ export function ProductCard({ product }: { product: ProductProps }) {
 
                 {/* Variant dots */}
                 {product.variants && product.variants.length > 0 && (
-                    <div className="absolute bottom-3 left-3 flex gap-1 bg-white/40 dark:bg-black/40 backdrop-blur-sm p-1 rounded-full group-hover:scale-110 transition-transform">
+                    <div className="absolute bottom-3 left-3 flex gap-1 bg-white/40 dark:bg-black/40 backdrop-blur-sm p-1 rounded-full group-hover/card:scale-110 transition-transform">
                         {product.variants.slice(0, 3).map((v, i) => (
                             <div
                                 key={i}
@@ -124,9 +129,25 @@ export function ProductCard({ product }: { product: ProductProps }) {
                     {product.title}
                 </h3>
                 <div className="mt-auto space-y-3 sm:space-y-4">
-                    <p className="text-brand-orange dark:text-brand-orange font-extrabold text-lg sm:text-xl">
-                        {formattedPrice}
-                    </p>
+                    {/* Low Stock Warning */}
+                    {product.stockQuantity !== undefined && product.stockQuantity < 30 && product.stockQuantity > 0 && (
+                        <p className="text-[10px] items-center font-bold text-red-500 flex gap-1 animate-pulse">
+                            <span className="w-1.5 h-1.5 rounded-full bg-red-500 inline-block" />
+                            {t.products?.low_stock || "Tez orada tugaydi"}
+                        </p>
+                    )}
+
+                    <div className="flex flex-col">
+                        <div className="flex items-baseline gap-2">
+                            <p className="text-brand-orange dark:text-brand-orange font-extrabold text-lg sm:text-xl">
+                                {formattedPrice}
+                            </p>
+                            {/* Simulated Original Price (Discount Effect) */}
+                            <p className="text-xs text-red-500 dark:text-red-400 line-through decoration-red-500 decoration-2">
+                                {formattedOriginalPrice}
+                            </p>
+                        </div>
+                    </div>
 
                     {/* Seller Badge */}
                     {displaySeller && (
@@ -152,7 +173,7 @@ export function ProductCard({ product }: { product: ProductProps }) {
                     )}
 
                     <div
-                        className="w-full flex items-center justify-between bg-gray-50 dark:bg-gray-700 group-hover:bg-brand-orange dark:group-hover:bg-brand-orange text-brand-dark dark:text-white group-hover:text-white font-semibold py-2 px-3 sm:py-3 sm:px-4 rounded-xl transition-colors text-xs sm:text-base"
+                        className="w-full flex items-center justify-between bg-gray-50 dark:bg-gray-700 group-hover/card:bg-brand-orange dark:group-hover/card:bg-brand-orange text-brand-dark dark:text-white group-hover/card:text-white font-semibold py-2 px-3 sm:py-3 sm:px-4 rounded-xl transition-colors text-xs sm:text-base"
                     >
                         <span>{t.products.details}</span>
                         <ArrowRight size={16} className="sm:w-[18px] sm:h-[18px]" />

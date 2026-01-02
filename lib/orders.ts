@@ -35,6 +35,15 @@ export interface Order {
     subtotal: number;
     totalPrice: number;
     status: 'new' | 'contacted' | 'accepted' | 'shipping' | 'delivered' | 'cancelled';
+
+    // Optional fields for Uzum/External orders and Unit Economics
+    productTitle?: string;
+    productImage?: string;
+    variant?: string;
+    purchasePrice?: number;
+    commission?: number;
+    logisticDeliveryFee?: number;
+    sellerProfit?: number;
 }
 
 export function getOrders(): Order[] {

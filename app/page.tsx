@@ -5,6 +5,7 @@ import { ProductCard } from "@/components/product-card";
 import { ProductCarousel } from "@/components/product-carousel";
 import { useLanguage } from "@/components/language-provider";
 import { ShoppingBag, Zap, Store, Plane } from "lucide-react";
+import { FaqSection } from "@/components/faq-section";
 
 export default function Home() {
     const { t, language } = useLanguage();
@@ -101,6 +102,9 @@ export default function Home() {
                     </p>
                 </div>
             </section>
+
+            {/* FAQ Section */}
+            <FaqSection />
         </>
     );
 }

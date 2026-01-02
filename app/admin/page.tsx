@@ -50,12 +50,35 @@ export default function AdminDashboard() {
     const netProfit = orders
         .filter(o => o.status !== 'cancelled')
         .reduce((sum, order) => {
-            const orderCost = (order.items || []).reduce((itemSum, item) => {
-                const product = products.find(p => p.id === item.id);
-                const cost = product ? parsePrice(product.costPrice) : 0;
-                return itemSum + (cost * item.quantity);
-            }, 0);
-            return sum + (order.totalPrice - orderCost);
+            let profitFromPlatform = 0;
+
+            // 1. Calculate Payout (Revenue - Expenses)
+            // If Uzum provides a pre-calculated payout (sellerProfit), use it.
+            // This represents (Sell Price - Commission - Logistics).
+            if (typeof order.sellerProfit === 'number' && order.sellerProfit !== 0) {
+                profitFromPlatform = order.sellerProfit;
+            } else {
+                // Otherwise calculate manually for internal orders or missing data
+                const revenue = order.totalPrice || 0;
+                const expenses = (order.commission || 0) + (order.logisticDeliveryFee || 0);
+                profitFromPlatform = revenue - expenses;
+            }
+
+            // 2. Subtract Cost of Goods Sold (Tan Narxi) to get TRUE Net Profit
+            let cogs = 0;
+            if (order.purchasePrice) {
+                // For Uzum orders, purchasePrice is the unit cost. Multiply by amount.
+                cogs = order.purchasePrice * (order.amount || 1);
+            } else {
+                // Fallback for internal orders: calculate from products list
+                cogs = (order.items || []).reduce((itemSum, item) => {
+                    const product = products.find(p => p.id === item.id);
+                    const cost = product ? parsePrice(product.costPrice) : 0;
+                    return itemSum + (cost * item.quantity);
+                }, 0);
+            }
+
+            return sum + (profitFromPlatform - cogs);
         }, 0);
 
     const adminT = (t as any).admin;

@@ -133,6 +133,7 @@ export default function CheckoutPage() {
             }
         } catch (error) {
             console.error("Order error:", error);
+            alert(language === 'uz' ? "Xatolik yuz berdi. Iltimos qayta urinib ko'ring." : "Произошла ошибка. Пожалуйста, попробуйте снова.");
         } finally {
             setIsSubmitting(false);
         }

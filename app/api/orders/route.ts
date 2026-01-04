@@ -22,24 +22,27 @@ export async function GET() {
         if (fs.existsSync(INTERNAL_ORDERS_FILE)) {
             try {
                 const internalRaw = fs.readFileSync(INTERNAL_ORDERS_FILE, 'utf8');
-                const internalOrders = JSON.parse(internalRaw);
+                if (internalRaw.trim()) {
+                    const internalOrders = JSON.parse(internalRaw);
 
-                // Enhance internal orders with top-level product info for table display
-                const enhancedInternalOrders = internalOrders.map((o: any) => {
-                    const firstItem = o.items && o.items.length > 0 ? o.items[0] : null;
-                    return {
-                        ...o,
-                        // Ensure these fields exist for the table to render correctly
-                        productTitle: o.productTitle || (firstItem ? firstItem.title : 'Mahsulot(lar)'),
-                        productImage: o.productImage || (firstItem ? firstItem.image : ''),
-                        // Ensure total price is correct if missing
-                        totalPrice: o.totalPrice || o.subtotal + (o.shippingCost || 0)
-                    };
-                });
+                    // Enhance internal orders with top-level product info for table display
+                    const enhancedInternalOrders = internalOrders.map((o: any) => {
+                        const firstItem = o.items && o.items.length > 0 ? o.items[0] : null;
+                        return {
+                            ...o,
+                            // Ensure these fields exist for the table to render correctly
+                            productTitle: o.productTitle || (firstItem ? firstItem.title : 'Mahsulot(lar)'),
+                            productImage: o.productImage || (firstItem ? firstItem.image : ''),
+                            // Ensure total price is correct if missing
+                            totalPrice: o.totalPrice || o.subtotal + (o.shippingCost || 0)
+                        };
+                    });
 
-                allOrders = [...allOrders, ...enhancedInternalOrders];
+                    allOrders = [...allOrders, ...enhancedInternalOrders];
+                }
             } catch (e) {
                 console.error("Error reading internal orders:", e);
+                // Continue without internal orders
             }
         }
 
@@ -47,42 +50,44 @@ export async function GET() {
         if (fs.existsSync(UZUM_ORDERS_FILE)) {
             try {
                 const uzumRaw = fs.readFileSync(UZUM_ORDERS_FILE, 'utf8');
-                const rawUzumOrders = JSON.parse(uzumRaw);
+                if (uzumRaw.trim()) {
+                    const rawUzumOrders = JSON.parse(uzumRaw);
 
-                // Map raw Uzum data to our internal Order interface
-                const uzumOrders = rawUzumOrders.map((o: any) => ({
-                    id: o.id,
-                    createdAt: o.date ? new Date(o.date).toISOString() : new Date().toISOString(),
-                    productTitle: o.skuTitle || 'Mahsulot',
-                    productImage: typeof o.productImage === 'string' ? o.productImage : '',
-                    totalPrice: (o.sellPrice || 0) * (o.amount > 0 ? o.amount : 1),
-                    status: (o.status || 'new').toLowerCase() === 'canceled' ? 'cancelled' : (o.status || 'new').toLowerCase(),
-                    // Mock customer data for Uzum orders
-                    customer: {
-                        firstName: "Mijoz",
-                        lastName: o.orderId ? `#${o.orderId}` : '',
-                        phone: "+998 -- --- -- --",
-                        region: "Noma'lum",
-                        district: "-",
-                        telegram: ""
-                    },
-                    items: [
-                        {
-                            id: o.productId,
-                            title: o.skuTitle,
-                            price: o.sellPrice,
-                            quantity: o.amount > 0 ? o.amount : 1
-                        }
-                    ],
-                    // Financial data
-                    purchasePrice: o.purchasePrice || 0,
-                    commission: o.commission || 0,
-                    logisticDeliveryFee: o.logisticDeliveryFee || 0,
-                    sellerProfit: o.sellerProfit || 0,
-                    variant: 'Standard'
-                }));
+                    // Map raw Uzum data to our internal Order interface
+                    const uzumOrders = rawUzumOrders.map((o: any) => ({
+                        id: o.id,
+                        createdAt: o.date ? new Date(o.date).toISOString() : new Date().toISOString(),
+                        productTitle: o.skuTitle || 'Mahsulot',
+                        productImage: typeof o.productImage === 'string' ? o.productImage : '',
+                        totalPrice: (o.sellPrice || 0) * (o.amount > 0 ? o.amount : 1),
+                        status: (o.status || 'new').toLowerCase() === 'canceled' ? 'cancelled' : (o.status || 'new').toLowerCase(),
+                        // Mock customer data for Uzum orders
+                        customer: {
+                            firstName: "Mijoz",
+                            lastName: o.orderId ? `#${o.orderId}` : '',
+                            phone: "+998 -- --- -- --",
+                            region: "Noma'lum",
+                            district: "-",
+                            telegram: ""
+                        },
+                        items: [
+                            {
+                                id: o.productId,
+                                title: o.skuTitle,
+                                price: o.sellPrice,
+                                quantity: o.amount > 0 ? o.amount : 1
+                            }
+                        ],
+                        // Financial data
+                        purchasePrice: o.purchasePrice || 0,
+                        commission: o.commission || 0,
+                        logisticDeliveryFee: o.logisticDeliveryFee || 0,
+                        sellerProfit: o.sellerProfit || 0,
+                        variant: 'Standard'
+                    }));
 
-                allOrders = [...allOrders, ...uzumOrders];
+                    allOrders = [...allOrders, ...uzumOrders];
+                }
             } catch (e) {
                 console.error("Error reading Uzum orders:", e);
             }
@@ -105,8 +110,15 @@ export async function POST(req: Request) {
         // Read existing internal orders
         let orders: any[] = [];
         if (fs.existsSync(INTERNAL_ORDERS_FILE)) {
-            const fileContent = fs.readFileSync(INTERNAL_ORDERS_FILE, 'utf-8');
-            orders = JSON.parse(fileContent);
+            try {
+                const fileContent = fs.readFileSync(INTERNAL_ORDERS_FILE, 'utf-8');
+                if (fileContent.trim()) {
+                    orders = JSON.parse(fileContent);
+                }
+            } catch (e) {
+                console.error("Error parsing orders.json, resetting to empty:", e);
+                orders = [];
+            }
         }
 
         // Generate new ID (find max ID < 100000 to avoid conflict with Uzum IDs)

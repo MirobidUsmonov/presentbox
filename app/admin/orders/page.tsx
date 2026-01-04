@@ -306,18 +306,17 @@ export default function OrdersPage() {
                                                 {order.items && order.items.length > 0 ? (
                                                     order.items.map((item, idx) => (
                                                         <div key={idx} className="flex items-center gap-3">
-                                                            <div className="relative">
-                                                                {/* Image with fallback */}
+                                                            <div className="relative w-8 h-8 shrink-0">
                                                                 <img
                                                                     src={item.image || getProductImage(item.id || 0) || order.productImage || '/placeholder.png'}
                                                                     onError={(e) => {
                                                                         const target = e.target as HTMLImageElement;
-                                                                        target.src = '/placeholder.png'; // Fail-safe
+                                                                        target.src = "https://placehold.co/100x100?text=No+Img";
                                                                     }}
                                                                     alt=""
-                                                                    className="w-8 h-8 rounded-md object-cover bg-gray-100 border border-gray-200 dark:border-gray-700"
+                                                                    className="w-full h-full rounded-md object-cover bg-gray-100 border border-gray-200 dark:border-gray-700"
                                                                 />
-                                                                <span className="absolute -bottom-1 -right-1 bg-gray-900 text-white text-[9px] px-1 rounded-full">{item.quantity}x</span>
+                                                                <span className="absolute -bottom-1 -right-1 bg-gray-900 text-white text-[9px] px-1 rounded-full z-10">{item.quantity}x</span>
                                                             </div>
                                                             <div className="max-w-[150px]">
                                                                 <div className="font-medium text-xs text-gray-900 dark:text-white line-clamp-1" title={item.title}>{item.title}</div>
@@ -332,7 +331,7 @@ export default function OrdersPage() {
                                                             src={order.productImage || getProductImage(order.id) || '/placeholder.png'}
                                                             onError={(e) => {
                                                                 const target = e.target as HTMLImageElement;
-                                                                target.src = '/placeholder.png';
+                                                                target.src = "https://placehold.co/100x100?text=No+Img";
                                                             }}
                                                             alt=""
                                                             className="w-10 h-10 rounded-lg object-cover bg-gray-100 border border-gray-200 dark:border-gray-700"

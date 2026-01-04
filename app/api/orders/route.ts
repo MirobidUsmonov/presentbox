@@ -113,7 +113,13 @@ export async function POST(req: Request) {
             try {
                 const fileContent = fs.readFileSync(INTERNAL_ORDERS_FILE, 'utf-8');
                 if (fileContent.trim()) {
-                    orders = JSON.parse(fileContent);
+                    const parsed = JSON.parse(fileContent);
+                    if (Array.isArray(parsed)) {
+                        orders = parsed;
+                    } else {
+                        console.warn("orders.json is not an array, resetting to []");
+                        orders = [];
+                    }
                 }
             } catch (e) {
                 console.error("Error parsing orders.json, resetting to empty:", e);

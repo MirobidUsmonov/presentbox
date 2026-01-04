@@ -43,6 +43,11 @@ export async function middleware(request: NextRequest) {
 
         // If it's a mutation (POST, PUT, DELETE, PATCH), require Admin Auth
         if (['POST', 'PUT', 'DELETE', 'PATCH'].includes(request.method)) {
+            // EXCEPTION: Allow public to create orders
+            if (path === '/api/orders' && request.method === 'POST') {
+                return NextResponse.next();
+            }
+
             const token = request.cookies.get('admin_session')?.value;
             const session = token ? await verifySession(token) : null;
 

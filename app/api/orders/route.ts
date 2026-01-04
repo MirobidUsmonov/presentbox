@@ -150,6 +150,7 @@ export async function POST(req: Request) {
 
 👤 <b>Mijoz:</b> ${newOrder.customer.firstName} ${newOrder.customer.lastName}
 📞 <b>Tel:</b> ${newOrder.customer.phone}
+${newOrder.customer.telegram ? `📱 <b>TG:</b> @${newOrder.customer.telegram.replace('@', '')}` : ''}
 📍 <b>Manzil:</b> ${newOrder.customer.region}, ${newOrder.customer.district}
 
 🛒 <b>Mahsulotlar:</b>

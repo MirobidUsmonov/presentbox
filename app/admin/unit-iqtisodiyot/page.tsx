@@ -384,6 +384,7 @@ export default function UnitEconomicsPage() {
                                         outerRadius={80}
                                         paddingAngle={5}
                                         dataKey="value"
+                                        // @ts-ignore
                                         activeIndex={activeIndex}
                                         activeShape={renderActiveShape}
                                         onMouseEnter={onPieEnter}

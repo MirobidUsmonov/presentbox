@@ -310,8 +310,21 @@ export default function CheckoutPage() {
                             <div className="space-y-4 max-h-[300px] overflow-y-auto pr-2 custom-scrollbar">
                                 {items.map((item) => (
                                     <div key={`${item.id}-${item.variant}`} className="flex gap-4 group relative">
-                                        <div className="w-16 h-16 bg-white rounded-lg overflow-hidden border border-gray-100 dark:border-gray-600 shrink-0">
-                                            <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
+                                        <div className="w-16 h-16 bg-white rounded-lg overflow-hidden border border-gray-100 dark:border-gray-600 shrink-0 relative">
+                                            {item.image ? (
+                                                <img
+                                                    src={item.image}
+                                                    alt={item.title}
+                                                    className="w-full h-full object-cover"
+                                                    onError={(e) => {
+                                                        e.currentTarget.src = "https://placehold.co/600x400?text=No+Image";
+                                                    }}
+                                                />
+                                            ) : (
+                                                <div className="w-full h-full bg-gray-200 flex items-center justify-center text-xs text-gray-500">
+                                                    No Img
+                                                </div>
+                                            )}
                                         </div>
                                         <div className="flex-1 text-sm flex flex-col justify-between">
                                             <div className="flex justify-between items-start">

@@ -5,7 +5,7 @@
     "category": "Hazil",
     "image": "https://images.uzum.uz/d3lk3rrq345l7k05k9dg/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/spider-box-derevyannyj-2025302?skuId=7185524",
-    "inStock": false,
+    "inStock": true,
     "uz": {
       "title": "Spider Box - Hazil quti (O'rgimchak)",
       "description": "O'RGIMCHAK BILAN QUTI - HAZILLAR UCHUN IDEAL!\n😱 Kutilmagan syurpriz! Kimdir qutini ochsa, u yerdan o'rgimchak sakrab chiqadi va hissiyotlar bo'ronini keltirib chiqaradi.\n🎁 Do'stlar va oila uchun ajoyib sovg'a! Yaqinlaringizni xursand qilish va ularning qiziqarli reaktsiyasini ko'rish uchun ideal tanlov.\n🔨 Sifatli materiallar! Quti tabiiy yog'ochdan tayyorlangan, mustahkam va bardoshli.\n😂 Quvonch va kulgi! Har qanday partiyani, tug'ilgan kunni yoki oddiy kunni rang-barang qilishning ajoyib usuli.\n🕷 Haqiqiy o'rgimchak! Qora o'rgimchak shunchalik haqiqiy ko'rinadiki, u bir qarashda qo'rqitadi.\n✔ Mexanik ishlash printsipi! Batareyalar talab qilinmaydi - shunchaki qopqoqni oching.\n💡 Hamma uchun mos! Kattalar uchun ham, bolalar uchun ham qiziqarli o'yinchoq, do'stlar va hamkasblarning kayfiyatini ko'tarishning ajoyib usuli.\n📏 Hajmi: 10x6,5x7,5 sm\n🛒 Hoziroq buyurtma bering va quvonch ulashing!",
@@ -38,7 +38,7 @@
         "Качественный материал – прочный для долгого использования"
       ]
     },
-    "stockQuantity": 0,
+    "stockQuantity": 50,
     "costPrice": "10 000 so'm",
     "skuId": 7185524,
     "uzumId": 2025302
@@ -80,7 +80,7 @@
         "Предоставляются инструкция и видео-руководство для пользователей"
       ]
     },
-    "stockQuantity": 52,
+    "stockQuantity": 95,
     "skuId": 7185689,
     "uzumId": 2025331,
     "costPrice": "20 000 so'm"
@@ -124,7 +124,7 @@
         "Современный дизайн"
       ]
     },
-    "stockQuantity": 8,
+    "stockQuantity": 58,
     "costPrice": "20 000 so'm"
   },
   {
@@ -166,7 +166,7 @@
         "Отличный вариант для подарка"
       ]
     },
-    "stockQuantity": 15,
+    "stockQuantity": 14,
     "costPrice": "20 000 so'm"
   },
   {
@@ -214,7 +214,7 @@
         "GPRS: загрузка 60, TCP/IP"
       ]
     },
-    "stockQuantity": 13,
+    "stockQuantity": 12,
     "skuId": 7325974,
     "uzumId": 2056258,
     "costPrice": "22 000 so'm"
@@ -291,7 +291,7 @@
         "Высокая детализация: Четкая печать и яркие цвета"
       ]
     },
-    "stockQuantity": 3,
+    "stockQuantity": 40,
     "skuId": 7185910,
     "uzumId": 2025367,
     "costPrice": "2 500 so'm"
@@ -327,7 +327,7 @@
         "Особенности: Быстро сохнет, легкая и компактная"
       ]
     },
-    "stockQuantity": 12,
+    "stockQuantity": 24,
     "costPrice": "20 000 so'm"
   },
   {
@@ -336,7 +336,7 @@
     "category": "Gadjetlar",
     "image": "https://images.uzum.uz/d55t1f7njr2qv2v2ckv0/original.jpg",
     "uzumUrl": "https://uzum.uz/ru/product/umnye-ochki-s-2102090?skuId=7521019",
-    "inStock": false,
+    "inStock": true,
     "uz": {
       "title": "AI funksiyali aqlli ko'zoynak (Kamera, Bluetooth)",
       "description": "GL ONE aqlli ko'zoynaklari - bu kamera, Bluetooth quloqchinlari va onlayn tarjimonni o'zida mujassam etgan sun'iy intellektga ega yuqori texnologiyali gadjet. Toza ovoz yozish uchun shovqinni kamiyatirish (EIS) mikrofonlari bilan jihozlangan. Qo'llarni ishlatmasdan kontent yaratish, musiqa tinglash va qo'ng'iroqlarga javob berish imkonini beradi. Fayllarni bir zumda almashish uchun ilova orqali smartfon bilan sinxronlanadi.",
@@ -365,7 +365,7 @@
         "Приложение: LensMoo"
       ]
     },
-    "stockQuantity": 0,
+    "stockQuantity": 14,
     "skuId": 7521019,
     "uzumId": 2102090,
     "costPrice": "400 000 so'm"
@@ -401,7 +401,7 @@
         "Уход: Быстросохнущий материал"
       ]
     },
-    "stockQuantity": 13,
+    "stockQuantity": 24,
     "costPrice": "20 000 so'm"
   },
   {

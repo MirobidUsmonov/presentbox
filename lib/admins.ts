@@ -26,7 +26,9 @@ const defaultAdmins: Admin[] = [
         id: 1,
         username: "presentbox",
         roleId: 1,
-        password: "admin123",
+        // formatted for security
+        hash: "802db91571df9dac2274ae1a300d09e9a82126a5e15c2d7eeacc435f8b2862980655b75200971ff64f945cb5a1590a37eae906d6bec7c8e7e30b1909c2128de7",
+        salt: "445c51ff1f96218f60615d79901b3446",
         fullName: "Super Admin",
         createdAt: new Date().toISOString()
     }

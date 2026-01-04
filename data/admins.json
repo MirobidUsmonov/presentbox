@@ -3,18 +3,18 @@
     "id": 1,
     "username": "presentbox",
     "roleId": 1,
-    "password": "admin123",
     "fullName": "Super Admin",
     "createdAt": "2024-12-30T10:00:00.000Z",
-    "hash": "802db91571df9dac2274ae1a300d09e9a82126a5e15c2d7eeacc435f8b2862980655b75200971ff64f945cb5a1590a37eae906d6bec7c8e7e30b1909c2128de7",
-    "salt": "445c51ff1f96218f60615d79901b3446"
+    "hash": "011b85c85ad9411da1c014fd75816e8c6c79129381ba36feb16deab9dde14b24319dcb7be33a3b22e23d9ef53777e6e2ce0f87879eab3b9fd5fc1ca99c72edc5",
+    "salt": "2916710b56e00df6846f02f1c9c4c577"
   },
   {
     "id": 2,
     "username": "bido",
     "roleId": 1,
-    "password": "Mirobid2020+",
     "fullName": "Mirobid Usmonov",
-    "createdAt": "2026-01-02T12:00:00.000Z"
+    "createdAt": "2026-01-02T12:00:00.000Z",
+    "hash": "3cd114ab2c261884d70db8f0edebb2b0569a476701ecff74e652fd1692e327653b2118dd33a55255c7206b34e294fb59491576c55f1e18e00a91041cfdc1c3c6",
+    "salt": "35fb2a7f83c10f176925460a402668cc"
   }
 ]

@@ -1,5 +1,5 @@
 
-const UZUM_SELLER_TOKEN = 'iDyntS+h8CZLNspTIorSAC4fY+iVdmd7lVxRgc5qRJM=';
+const UZUM_SELLER_TOKEN = process.env.UZUM_SELLER_TOKEN || '';
 const BASE_URL = 'https://api-seller.uzum.uz/api/seller-openapi';
 
 async function uzumFetch(endpoint: string, options: RequestInit = {}, retries = 3, backoff = 1000) {

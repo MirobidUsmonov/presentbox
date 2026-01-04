@@ -56,6 +56,8 @@ export default function CheckoutPage() {
     useEffect(() => {
         useCartStore.persist.rehydrate();
         setIsHydrated(true);
+        // Scroll to top on page load (mobile fix)
+        window.scrollTo(0, 0);
     }, []);
 
     // Redirect if cart is empty and not success state

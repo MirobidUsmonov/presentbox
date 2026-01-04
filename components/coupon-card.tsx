@@ -10,7 +10,7 @@ export function CouponCard() {
 
     return (
         <div
-            className="w-full max-w-md aspect-[1.8/1] cursor-pointer perspective-1000 group/card"
+            className="w-full max-w-md aspect-[1.4/1] sm:aspect-[1.8/1] cursor-pointer perspective-1000 group/card"
             onClick={() => setIsFlipped(!isFlipped)}
         >
             <div className={`relative w-full h-full duration-700 preserve-3d transition-transform ${isFlipped ? 'rotate-y-180' : ''}`}>
@@ -18,7 +18,7 @@ export function CouponCard() {
                 {/* Front Side */}
                 <div className="absolute inset-0 backface-hidden">
                     <div
-                        className="w-full h-full bg-gradient-to-br from-brand-orange to-brand-coral shadow-2xl flex flex-col items-center justify-center text-white p-8 relative overflow-hidden"
+                        className="w-full h-full bg-gradient-to-br from-brand-orange to-brand-coral shadow-2xl flex flex-col items-center justify-center text-white p-5 sm:p-8 relative overflow-hidden"
                         style={{
                             maskImage: 'radial-gradient(circle at 10px 50%, transparent 15px, black 16px), radial-gradient(circle at right 10px top 50%, transparent 15px, black 16px)',
                             maskComposite: 'exclude',
@@ -34,14 +34,14 @@ export function CouponCard() {
                         <div className="absolute inset-4 border-2 border-dashed border-white/30 rounded-lg"></div>
 
                         <div className="relative z-10 flex flex-col items-center text-center">
-                            <div className="bg-white/20 p-4 rounded-full mb-4 backdrop-blur-sm shadow-inner group-hover/card:scale-110 transition-transform duration-300">
-                                <Gift size={40} className="text-white" />
+                            <div className="bg-white/20 p-3 sm:p-4 rounded-full mb-3 sm:mb-4 backdrop-blur-sm shadow-inner group-hover/card:scale-110 transition-transform duration-300">
+                                <Gift className="text-white w-8 h-8 sm:w-10 sm:h-10" />
                             </div>
 
-                            <h3 className="text-xl font-bold uppercase tracking-wider mb-2 text-white/90">
+                            <h3 className="text-sm sm:text-xl font-bold uppercase tracking-wider mb-1 sm:mb-2 text-white/90">
                                 {t.hero.coupon.front_subtitle}
                             </h3>
-                            <h2 className="text-4xl font-black mb-6 drop-shadow-md">
+                            <h2 className="text-3xl sm:text-4xl font-black mb-4 sm:mb-6 drop-shadow-md">
                                 {t.hero.coupon.front_title}
                             </h2>
 

@@ -130,6 +130,11 @@ export default function CheckoutPage() {
                 setTimeout(() => {
                     router.push('/');
                 }, 3000);
+            } else {
+                const errData = await response.json();
+                alert(language === 'uz'
+                    ? `Xatolik yuz berdi: ${errData.error || 'Noma\'lum xatolik'}`
+                    : `Ошибка: ${errData.error || 'Неизвестная ошибка'}`);
             }
         } catch (error) {
             console.error("Order error:", error);

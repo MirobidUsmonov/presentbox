@@ -18,29 +18,47 @@ export async function POST() {
             return NextResponse.json({ error: 'Server configuration error' }, { status: 500 });
         }
 
-        // 1. Fetch latest orders from Uzum
-        const dateFrom = 0;
-        const dateTo = new Date().getTime(); // Now
+        // 1. Fetch latest orders from Uzum (all orders from start of current year)
+        const now = new Date();
+        const startOfYear = new Date(now.getFullYear(), 0, 1).getTime();
+        const dateTo = now.getTime();
 
-        const finUrl = `${BASE_URL}/v1/finance/orders?shopIds=${SHOP_ID}&dateFrom=${dateFrom}&dateTo=${dateTo}`;
+        let allNewOrders: any[] = [];
+        let currentPage = 0;
+        let totalPages = 1;
 
-        console.log(`Fetching updates from Uzum...`);
+        console.log(`Starting full refresh from ${new Date(startOfYear).toLocaleDateString()}...`);
 
-        const response = await fetch(finUrl, {
-            headers: {
-                'Authorization': UZUM_SELLER_TOKEN,
-                'Content-Type': 'application/json'
+        while (currentPage < totalPages) {
+            const finUrl = `${BASE_URL}/v1/finance/orders?shopIds=${SHOP_ID}&dateFrom=${startOfYear}&dateTo=${dateTo}&size=100&page=${currentPage}`;
+
+            const response = await fetch(finUrl, {
+                headers: {
+                    'Authorization': UZUM_SELLER_TOKEN,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (!response.ok) {
+                const text = await response.text();
+                console.error(`Uzum API Error (Page ${currentPage}):`, text);
+                break; // Stop but process what we have
             }
-        });
 
-        if (!response.ok) {
-            const text = await response.text();
-            console.error('Uzum API Error:', text);
-            return NextResponse.json({ error: 'Failed to fetch from Uzum', details: text }, { status: response.status });
+            const data = await response.json();
+            const pageOrders = data.orderItems || [];
+            allNewOrders = [...allNewOrders, ...pageOrders];
+
+            totalPages = data.totalPages || 1;
+            currentPage++;
+
+            console.log(`Fetched page ${currentPage}/${totalPages}. Total orders so far: ${allNewOrders.length}`);
+
+            // Safety break to prevent infinite loops in case of unexpected API behavior
+            if (currentPage > 100) break;
         }
 
-        const data = await response.json();
-        const newOrders = data.orderItems || [];
+        const newOrders = allNewOrders;
 
         // 2. Read existing local data to preserve manual edits (Tan Narxi / purchasePrice)
         const dataPath = path.join(process.cwd(), 'data', 'uzum-orders.json');

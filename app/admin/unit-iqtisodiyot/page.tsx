@@ -76,7 +76,7 @@ export default function UnitEconomicsPage() {
 
     const fetchData = async () => {
         try {
-            const res = await fetch('/api/orders');
+            const res = await fetch('/api/orders', { cache: 'no-store' });
             const data = await res.json();
             if (data.orders) {
                 setOrders(data.orders);
@@ -91,15 +91,24 @@ export default function UnitEconomicsPage() {
     const handleRefresh = async () => {
         setLoading(true);
         try {
-            const res = await fetch('/api/orders/refresh', { method: 'POST' });
+            const res = await fetch('/api/orders/refresh', { method: 'POST', cache: 'no-store' });
+            const data = await res.json();
+
             if (res.ok) {
-                const data = await res.json();
-                setOrders(data.orders);
+                if (data.orders && data.orders.length > 0) {
+                    setOrders(data.orders);
+                    alert(`Ma'lumotlar yangilandi! Jami ${data.orders.length} ta buyurtma.`);
+                } else {
+                    console.warn("Uzum API returned empty list");
+                    alert("Uzum tizimidan yangi ma'lumotlar topilmadi (0 ta buyurtma).");
+                }
             } else {
-                console.error("Refresh failed");
+                console.error("Refresh failed:", data);
+                alert(`Xatolik: ${data.error || 'Noma\'lum xatolik'}\n${data.details || ''}`);
             }
         } catch (error) {
             console.error("Error refreshing:", error);
+            alert("Tizim xatoligi: Serverga ulanib bo'lmadi.");
         } finally {
             setLoading(false);
         }

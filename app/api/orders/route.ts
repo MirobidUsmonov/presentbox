@@ -4,6 +4,8 @@ import fs from 'fs';
 import path from 'path';
 import { sendTelegramMessage } from '@/lib/telegram';
 
+export const dynamic = 'force-dynamic';
+
 // File paths
 const DATA_DIR = path.join(process.cwd(), 'data');
 const UZUM_ORDERS_FILE = path.join(DATA_DIR, 'uzum-orders.json');

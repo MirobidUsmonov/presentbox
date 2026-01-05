@@ -4,9 +4,12 @@ import fs from 'fs';
 import path from 'path';
 
 // SECURE: Credentials moved to environment variables
+// SECURE: Credentials moved to environment variables
 const UZUM_SELLER_TOKEN = process.env.UZUM_SELLER_TOKEN || '';
 const BASE_URL = 'https://api-seller.uzum.uz/api/seller-openapi';
 const SHOP_ID = process.env.UZUM_SHOP_ID ? parseInt(process.env.UZUM_SHOP_ID) : 0;
+
+export const dynamic = 'force-dynamic';
 
 export async function POST() {
     try {
@@ -40,7 +43,7 @@ export async function POST() {
         const newOrders = data.orderItems || [];
 
         // 2. Read existing local data to preserve manual edits (Tan Narxi / purchasePrice)
-        const dataPath = 'C:\\Users\\Windows 11\\.gemini\\antigravity\\scratch\\presentbox\\data\\uzum-orders.json';
+        const dataPath = path.join(process.cwd(), 'data', 'uzum-orders.json');
         const costMap = new Map<number, number>(); // orderId -> purchasePrice
 
         if (fs.existsSync(dataPath)) {

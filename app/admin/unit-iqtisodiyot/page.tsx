@@ -250,10 +250,10 @@ export default function UnitEconomicsPage() {
 
     const totalPages = Math.ceil(filteredData.orders.length / itemsPerPage);
 
-    // Reset to first page when filters change
+    // Reset to first page when filters or page size change
     useEffect(() => {
         setCurrentPage(1);
-    }, [timeRange, orders.length]);
+    }, [timeRange, orders.length, itemsPerPage]);
 
     if (loading) return <div className="min-h-screen flex items-center justify-center bg-slate-900 text-white">
         <div className="flex flex-col items-center gap-4">
@@ -517,32 +517,37 @@ export default function UnitEconomicsPage() {
                 </div>
 
                 {/* Pagination UI */}
-                <div className="p-4 border-t border-slate-200 dark:border-slate-700 flex flex-col md:flex-row items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-900/30">
+                <div className="p-4 border-t border-slate-200 dark:border-slate-700 flex flex-col md:flex-row items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-900/40">
                     <div className="flex items-center gap-3">
-                        <select
-                            value={itemsPerPage}
-                            onChange={(e) => setItemsPerPage(Number(e.target.value))}
-                            className="bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-500"
-                        >
-                            {[10, 20, 50, 100].map(size => (
-                                <option key={size} value={size}>{size}</option>
-                            ))}
-                        </select>
-                        <span className="text-xs text-slate-500">Sahifada ko'rsatish</span>
+                        <div className="relative">
+                            <select
+                                value={itemsPerPage}
+                                onChange={(e) => setItemsPerPage(Number(e.target.value))}
+                                className="appearance-none bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-1.5 pr-8 text-xs font-semibold text-slate-700 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cursor-pointer hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+                            >
+                                {[10, 20, 50, 100].map(size => (
+                                    <option key={size} value={size}>{size}</option>
+                                ))}
+                            </select>
+                            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-400">
+                                <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+                            </div>
+                        </div>
+                        <span className="text-xs text-slate-500 font-medium">Sahifada ko'rsatish</span>
                     </div>
 
                     <div className="flex items-center gap-2">
                         <button
                             disabled={currentPage === 1}
                             onClick={() => setCurrentPage(p => p - 1)}
-                            className="p-1.5 rounded-md border border-slate-300 dark:border-slate-600 disabled:opacity-30 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                            className="p-2 rounded-lg border border-slate-300 dark:border-slate-600 disabled:opacity-20 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400 transition-all active:scale-95"
+                            title="Oldingi"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
                         </button>
 
-                        <div className="flex items-center gap-1">
+                        <div className="flex items-center gap-1.5">
                             {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
-                                // Simple logic to show pages around current
                                 let pageNum = i + 1;
                                 if (totalPages > 5 && currentPage > 3) {
                                     pageNum = currentPage - 2 + i;
@@ -555,9 +560,9 @@ export default function UnitEconomicsPage() {
                                     <button
                                         key={pageNum}
                                         onClick={() => setCurrentPage(pageNum)}
-                                        className={`w-8 h-8 rounded-md text-xs font-medium transition-colors ${currentPage === pageNum
-                                            ? 'bg-blue-600 text-white'
-                                            : 'hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400 border border-transparent'
+                                        className={`w-9 h-9 rounded-lg text-sm font-bold transition-all active:scale-95 ${currentPage === pageNum
+                                            ? 'bg-blue-600 text-white shadow-lg shadow-blue-500/30 border border-blue-500'
+                                            : 'bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700'
                                             }`}
                                     >
                                         {pageNum}
@@ -566,10 +571,10 @@ export default function UnitEconomicsPage() {
                             })}
                             {totalPages > 5 && currentPage < totalPages - 2 && (
                                 <>
-                                    <span className="text-slate-400 px-1">...</span>
+                                    <span className="text-slate-400 px-1 font-bold">...</span>
                                     <button
                                         onClick={() => setCurrentPage(totalPages)}
-                                        className="w-8 h-8 rounded-md text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400"
+                                        className="w-9 h-9 rounded-lg text-sm font-bold bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-700 transition-all active:scale-95"
                                     >
                                         {totalPages}
                                     </button>
@@ -580,14 +585,15 @@ export default function UnitEconomicsPage() {
                         <button
                             disabled={currentPage === totalPages || totalPages === 0}
                             onClick={() => setCurrentPage(p => p + 1)}
-                            className="p-1.5 rounded-md border border-slate-300 dark:border-slate-600 disabled:opacity-30 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                            className="p-2 rounded-lg border border-slate-300 dark:border-slate-600 disabled:opacity-20 hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400 transition-all active:scale-95"
+                            title="Keyingi"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
                         </button>
                     </div>
 
-                    <div className="text-xs text-slate-500 font-medium">
-                        {filteredData.orders.length} tadan {(currentPage - 1) * itemsPerPage + 1}-{Math.min(currentPage * itemsPerPage, filteredData.orders.length)} ko'rsatilyapti
+                    <div className="text-xs text-slate-500 font-semibold bg-slate-100 dark:bg-slate-800/50 px-3 py-1.5 rounded-full border border-slate-200 dark:border-slate-700">
+                        <span className="text-slate-900 dark:text-slate-200">{filteredData.orders.length}</span> tadan <span className="text-blue-500">{(currentPage - 1) * itemsPerPage + 1}-{Math.min(currentPage * itemsPerPage, filteredData.orders.length)}</span> ko'rsatilyapti
                     </div>
                 </div>
             </div>

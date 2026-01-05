@@ -66,6 +66,9 @@ export default function UnitEconomicsPage() {
     const [activeIndex, setActiveIndex] = useState(0);
     const [chartMetric, setChartMetric] = useState<'sales' | 'profit'>('sales');
 
+    const [currentPage, setCurrentPage] = useState(1);
+    const [itemsPerPage, setItemsPerPage] = useState(20);
+
     const onPieEnter = useCallback((_: any, index: number) => {
         setActiveIndex(index);
     }, []);
@@ -240,6 +243,17 @@ export default function UnitEconomicsPage() {
         };
     }, [orders, timeRange]);
 
+    const paginatedOrders = useMemo(() => {
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        return filteredData.orders.slice(startIndex, startIndex + itemsPerPage);
+    }, [filteredData.orders, currentPage, itemsPerPage]);
+
+    const totalPages = Math.ceil(filteredData.orders.length / itemsPerPage);
+
+    // Reset to first page when filters change
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [timeRange, orders.length]);
 
     if (loading) return <div className="min-h-screen flex items-center justify-center bg-slate-900 text-white">
         <div className="flex flex-col items-center gap-4">
@@ -443,7 +457,7 @@ export default function UnitEconomicsPage() {
                             </tr>
                         </thead>
                         <tbody>
-                            {filteredData.orders.map((order) => {
+                            {paginatedOrders.map((order) => {
                                 let payout = order.sellerProfit;
                                 if (!payout) payout = order.totalPrice - (order.commission || 0) - (order.logisticDeliveryFee || 0);
                                 const realNetProfit = payout - (order.purchasePrice || 0);
@@ -500,6 +514,81 @@ export default function UnitEconomicsPage() {
                             })}
                         </tbody>
                     </table>
+                </div>
+
+                {/* Pagination UI */}
+                <div className="p-4 border-t border-slate-200 dark:border-slate-700 flex flex-col md:flex-row items-center justify-between gap-4 bg-slate-50/50 dark:bg-slate-900/30">
+                    <div className="flex items-center gap-3">
+                        <select
+                            value={itemsPerPage}
+                            onChange={(e) => setItemsPerPage(Number(e.target.value))}
+                            className="bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 rounded px-2 py-1 text-xs focus:outline-none focus:ring-1 focus:ring-blue-500"
+                        >
+                            {[10, 20, 50, 100].map(size => (
+                                <option key={size} value={size}>{size}</option>
+                            ))}
+                        </select>
+                        <span className="text-xs text-slate-500">Sahifada ko'rsatish</span>
+                    </div>
+
+                    <div className="flex items-center gap-2">
+                        <button
+                            disabled={currentPage === 1}
+                            onClick={() => setCurrentPage(p => p - 1)}
+                            className="p-1.5 rounded-md border border-slate-300 dark:border-slate-600 disabled:opacity-30 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+                        </button>
+
+                        <div className="flex items-center gap-1">
+                            {Array.from({ length: Math.min(5, totalPages) }, (_, i) => {
+                                // Simple logic to show pages around current
+                                let pageNum = i + 1;
+                                if (totalPages > 5 && currentPage > 3) {
+                                    pageNum = currentPage - 2 + i;
+                                    if (pageNum > totalPages) pageNum = totalPages - (4 - i);
+                                }
+                                if (pageNum < 1) return null;
+                                if (pageNum > totalPages) return null;
+
+                                return (
+                                    <button
+                                        key={pageNum}
+                                        onClick={() => setCurrentPage(pageNum)}
+                                        className={`w-8 h-8 rounded-md text-xs font-medium transition-colors ${currentPage === pageNum
+                                            ? 'bg-blue-600 text-white'
+                                            : 'hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400 border border-transparent'
+                                            }`}
+                                    >
+                                        {pageNum}
+                                    </button>
+                                );
+                            })}
+                            {totalPages > 5 && currentPage < totalPages - 2 && (
+                                <>
+                                    <span className="text-slate-400 px-1">...</span>
+                                    <button
+                                        onClick={() => setCurrentPage(totalPages)}
+                                        className="w-8 h-8 rounded-md text-xs font-medium hover:bg-slate-100 dark:hover:bg-slate-700 text-slate-600 dark:text-slate-400"
+                                    >
+                                        {totalPages}
+                                    </button>
+                                </>
+                            )}
+                        </div>
+
+                        <button
+                            disabled={currentPage === totalPages || totalPages === 0}
+                            onClick={() => setCurrentPage(p => p + 1)}
+                            className="p-1.5 rounded-md border border-slate-300 dark:border-slate-600 disabled:opacity-30 hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6" /></svg>
+                        </button>
+                    </div>
+
+                    <div className="text-xs text-slate-500 font-medium">
+                        {filteredData.orders.length} tadan {(currentPage - 1) * itemsPerPage + 1}-{Math.min(currentPage * itemsPerPage, filteredData.orders.length)} ko'rsatilyapti
+                    </div>
                 </div>
             </div>
         </div>
